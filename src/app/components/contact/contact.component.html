@@ -1,0 +1,53 @@
+<div class="flex flex-col items-center space-y-2 w-full mb-4 mt-6">
+  <div class="flex flex-row">
+    <h1 class="text-highlight font-extrabold text-4xl text-center">Contact</h1>
+    <h1 class="text-primary font-extrabold text-4xl text-center ml-2">ME</h1>
+  </div>
+  <form
+    class="flex flex-col w-full lg:w-2/3"
+    action="{{ formspreeEndpoint }}"
+    method="POST"
+  >
+    <label
+      class="text-optional font-semibold text-4xl text-start mt-4"
+      for="email"
+      >Your email</label
+    >
+    <input
+      class="w-full bg-card rounded-md !ring-primary border-none mt-4 py-2 px-3"
+      placeholder="person@mail.com"
+      type="email"
+      name="email"
+    />
+
+    <label
+      class="text-optional font-semibold text-4xl text-start mt-4"
+      for="subject"
+      >Subject</label
+    >
+    <input
+      class="w-full bg-card rounded-md !ring-primary border-none mt-4 py-2 px-3"
+      placeholder="Interview"
+      [type]="'text'"
+    />
+
+    <label
+      class="text-optional font-semibold text-4xl text-start mt-4"
+      for="message"
+      >Your message</label
+    >
+    <textarea
+      class="w-full bg-card rounded-md h-40 p-3 !ring-primary mt-4 !border-transparent"
+      placeholder="Hey Gustavo..."
+      type="textarea"
+      name="message"
+    ></textarea>
+
+    <button
+      class="px-4 py-3 w-2/3 md:w-1/4 font-semibold rounded-md bg-primary mt-4 mx-auto"
+      type="submit"
+    >
+      Send message
+    </button>
+  </form>
+</div>

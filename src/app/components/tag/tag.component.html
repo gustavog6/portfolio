@@ -1,0 +1,17 @@
+<div
+  class="flex flex-row items-center justify-center px-2 md:px-4 border-2 border-auxiliar rounded-2xl mt-2 py-1 hover:border-primary group"
+>
+  <i
+    *ngIf="icon"
+    class="text-2xl mr-2 text-auxiliar group-hover:text-primary"
+    [ngClass]="icon"
+  ></i>
+  <div *ngIf="svg" class="my-1">
+    <img
+      *ngIf="svg"
+      class="p-0.5 w-6 mr-2 rounded-2xl text-auxiliar bg-auxiliar group-hover:bg-primary"
+      src="{{ svg }}"
+    />
+  </div>
+  <ng-content></ng-content>
+</div>

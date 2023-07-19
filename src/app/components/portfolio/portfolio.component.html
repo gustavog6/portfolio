@@ -1,0 +1,29 @@
+<div class="w-full flex flex-col mt-8">
+  <div class="flex flex-row justify-center">
+    <h1 class="text-highlight font-extrabold text-4xl text-center mb-6">
+      Latest
+    </h1>
+    <h1 class="text-primary font-extrabold text-4xl text-center mb-6 ml-2">
+      PROJECTS
+    </h1>
+  </div>
+  <div class="flex flex-col md:flex-row mt-8">
+    <div
+      class="md:w-1/3 mb-3 md:mb-0 md:ml-3 flex flex-col justify-center items-center px-8 py-6 border-2 border-primary rounded-3xl md:hover:border-primary"
+      *ngFor="let project of projects"
+    >
+      <div class="flex flex-col w-5/6 justify-center">
+        <h1 class="text-optional font-bold text-4xl text-center mb-5">
+          {{ project.title }}
+        </h1>
+        <img class="rounded-md" src="{{ project.img }}" alt="" />
+      </div>
+      <button
+        class="px-4 py-2 border-2 border-optional mt-4 rounded-md text-optional font-semibold hover:bg-optional hover:text-background"
+        (click)="openDialog(project)"
+      >
+        Read more
+      </button>
+    </div>
+  </div>
+</div>

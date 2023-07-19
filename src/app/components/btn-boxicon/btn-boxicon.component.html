@@ -1,0 +1,10 @@
+<button class="rounded" *ngFor="let link of rrssLinks; let i = index">
+  <div *ngIf="i < 4">
+    <a target="_blank" rel="noopener noreferrer" href="{{ link.link }}">
+      <i
+        class="bx-border-circle bx-md text-optional border-optional hover:text-background hover:bg-optional"
+        ngClass="{{ link.icon }}"
+      ></i>
+    </a>
+  </div>
+</button>

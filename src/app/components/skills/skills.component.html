@@ -1,0 +1,33 @@
+<div class="flex flex-col h-full w-full mt-8">
+  <div class="space-y-8">
+    <div class="flex flex-col">
+      <h1 class="text-primary font-extrabold text-4xl text-center">Skills</h1>
+    </div>
+    <div class="flex">
+      <div class="flex flex-col w-1/2">
+        <h1 class="text-optional font-bold text-3xl text-center mb-5">
+          Tech Skills
+        </h1>
+        <div
+          class="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center md:space-x-2 w-11/12"
+        >
+          <div *ngFor="let tech of techs">
+            <app-tag icon="{{ tech.icon }}">{{ tech.title }}</app-tag>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col w-1/2">
+        <h1 class="text-optional font-bold text-3xl text-center mb-5">
+          Soft Skills
+        </h1>
+        <div
+          class="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center md:space-x-2 w-11/12"
+        >
+          <div *ngFor="let soft of softs">
+            <app-tag svg="{{ soft.svg }}">{{ soft.title }}</app-tag>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
