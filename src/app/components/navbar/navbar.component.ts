@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-// import { Collapse } from 'flowbite';
+import { Collapse } from 'flowbite';
 import { RRSS } from './../../models/portfolio.model';
 import { RrssService } from 'src/app/services/rrss.service';
 
@@ -34,7 +34,7 @@ export class NavbarComponent {
     },
   };
 
-  // collapse = new Collapse(this.$targetEl, this.$triggerEl, this.options);
+  collapse = new Collapse(this.$targetEl, this.$triggerEl, this.options);
 
   getLink() {
     return this.rrssLinks
