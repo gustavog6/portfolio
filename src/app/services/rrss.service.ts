@@ -30,7 +30,7 @@ export class RrssService {
     },
     {
       title: 'Resume',
-      link: 'https://flowcv.com/resume/td3ndbham6',
+      link: 'https://flowcv.com/resume/5qslvhgimr',
       icon: '',
     },
     {

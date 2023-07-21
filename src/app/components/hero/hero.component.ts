@@ -10,7 +10,7 @@ export class HeroComponent {
   rrssLinks: RRSS[];
 
   heroText =
-    "I'm familiar with Javascript, React, Angular, HTML/CSS, WordPress, and GIT, and I'm excited to improve my skills. I have the desire to find my first job in the industry where I can collaborate, learn from the team and add value in the processes.";
+    "I'm familiar with Javascript, Angular, React, HTML/CSS, WordPress, TailwindCSS, GIT and Wit.ai, and I'm excited to improve my skills. I have all the will to find my first job in the industry where I can collaborate, learn from the team and add value to the processes.";
 
   constructor(private links: RrssService) {
     this.rrssLinks = links.rrss;

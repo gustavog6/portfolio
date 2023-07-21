@@ -4,11 +4,17 @@ import { Collapse } from 'flowbite';
 import { RRSS } from './../../models/portfolio.model';
 import { RrssService } from 'src/app/services/rrss.service';
 
+type tabType = 'home' | 'about-me' | 'skills' | 'portfolio' | 'contact';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
+
+  public currentTab: tabType = 'home';
+
+
   rrssLinks: RRSS[];
 
   constructor(private link: RrssService) {

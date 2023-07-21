@@ -15,22 +15,65 @@
       <ul
         class="bg-card dark:bg-card absolute w-full left-0 text-center pb-4 space-y-4 lg:space-y-0 lg:pb-0 lg:static lg:flex lg:flex-row lg:items-center lg:content-center lg:space-x-8 font-semibold text-lg"
       >
-        <li>
-          <a class="text-highlight hover:text-primary" aria-current="page" href="#home"
+        <li
+          (click)="currentTab = 'home'"
+          data-collapse-toggle="navbar-sticky"
+          aria-expanded="true"
+        >
+          <a
+            class="text-highlight hover:text-primary"
+            [ngClass]="{ 'text-primary': currentTab === 'home' }"
+            href="#home"
             >Home</a
           >
         </li>
-        <li>
-          <a class="text-highlight hover:text-primary" href="#about">About me</a>
+        <li
+          (click)="currentTab = 'about-me'"
+          data-collapse-toggle="navbar-sticky"
+          aria-expanded="true"
+        >
+          <a
+            class="text-highlight hover:text-primary"
+            [ngClass]="{ 'text-primary': currentTab === 'about-me' }"
+            href="#about"
+            >About me</a
+          >
         </li>
-        <li>
-          <a class="text-highlight hover:text-primary" href="#skills" >Skills</a>
+        <li
+          (click)="currentTab = 'skills'"
+          data-collapse-toggle="navbar-sticky"
+          aria-expanded="true"
+        >
+          <a
+            class="text-highlight hover:text-primary"
+            [ngClass]="{ 'text-primary': currentTab === 'skills' }"
+            href="#skills"
+            >Skills</a
+          >
         </li>
-        <li>
-          <a class="text-highlight hover:text-primary" href="#portfolio" >Portfolio</a>
+        <li
+          (click)="currentTab = 'portfolio'"
+          data-collapse-toggle="navbar-sticky"
+          aria-expanded="true"
+        >
+          <a
+            class="text-highlight hover:text-primary"
+            [ngClass]="{ 'text-primary': currentTab === 'portfolio' }"
+            href="#portfolio"
+            >Portfolio</a
+          >
         </li>
-        <li>
-          <a class="text-highlight hover:text-primary" href="#contact" >Contact</a>
+        <li
+          (click)="currentTab = 'contact'"
+          data-collapse-toggle="navbar-sticky"
+          aria-expanded="true"
+        >
+          <a
+            class="text-highlight hover:text-primary"
+            [ngClass]="{ 'text-primary': currentTab === 'contact' }"
+            href="#contact"
+            >Contact</a
+          >
         </li>
       </ul>
     </div>
@@ -46,7 +89,7 @@
       <button
         data-collapse-toggle="navbar-sticky"
         type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2"
         aria-controls="navbar-sticky"
         aria-expanded="false"
       >
