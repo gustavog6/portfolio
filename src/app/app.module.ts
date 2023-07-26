@@ -13,6 +13,7 @@ import { TagComponent } from './components/tag/tag.component';
 
 import { DialogModule } from '@angular/cdk/dialog';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { EducationComponent } from './components/education/education.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ProjectDialogComponent,
     SkillsComponent,
     TagComponent,
-    NavbarComponent
+    NavbarComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,

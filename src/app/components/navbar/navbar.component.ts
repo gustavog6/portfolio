@@ -4,7 +4,7 @@ import { Collapse } from 'flowbite';
 import { RRSS } from './../../models/portfolio.model';
 import { RrssService } from 'src/app/services/rrss.service';
 
-type tabType = 'home' | 'about-me' | 'skills' | 'portfolio' | 'contact';
+type tabType = 'home' | 'about-me' | 'skills' | 'portfolio' | 'education' | 'contact';
 
 @Component({
   selector: 'app-navbar',

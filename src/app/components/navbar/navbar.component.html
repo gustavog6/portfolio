@@ -52,6 +52,14 @@
             >Portfolio</a
           >
         </li>
+        <li (click)="clicked('education')">
+          <a
+            class="text-highlight hover:text-primary"
+            [ngClass]="{ 'text-primary': currentTab === 'education' }"
+            href="#education"
+            >Education</a
+          >
+        </li>
         <li (click)="clicked('contact')">
           <a
             class="text-highlight hover:text-primary"
