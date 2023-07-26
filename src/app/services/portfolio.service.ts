@@ -9,14 +9,6 @@ export class PortfolioService {
 
   projects: Projects[] = [
     {
-      title: 'To Do App',
-      link: 'https://gustavog6.github.io/TodoApp/',
-      technologies: ['React', 'Javascript', 'HTML', 'CSS'],
-      img: './../../../assets/images/ToDoApp.png',
-      description:
-        'To do application developed with React, following a design pattern inspired by FreeCodeCamp. A task can be created, edited and deleted. It also has an integrated router using React Router Dom. And the tasks persist using Localstorage. Hosted on Github Pages.',
-    },
-    {
       title: 'Trello Clone',
       link: 'https://trello-clone-gustavog6.netlify.app/',
       technologies: [
@@ -37,6 +29,14 @@ export class PortfolioService {
       img: './../../../assets/images/CryptoChatbot.png',
       description:
         'Chatbot integrated into META Messenger that provides cryptocurrency information with simple and detailed indicators, in addition to just prices. Modeled and trained using Wit.ai, built with javascript, hosted on ngrok, and connected to Messenger using META for Developers.',
+    },
+    {
+      title: 'To Do App',
+      link: 'https://gustavog6.github.io/TodoApp/',
+      technologies: ['React', 'Javascript', 'HTML', 'CSS'],
+      img: './../../../assets/images/ToDoApp.png',
+      description:
+        'To do application developed with React, following a design pattern inspired by FreeCodeCamp. A task can be created, edited and deleted. It also has an integrated router using React Router Dom. And the tasks persist using Localstorage. Hosted on Github Pages.',
     },
   ];
 }

@@ -22,6 +22,10 @@ export class SkillsService {
       icon: 'bx bxl-react',
     },
     {
+      title: 'Wit.ai',
+      icon: 'bx bx-conversation',
+    },
+    {
       title: 'HTML',
       icon: 'bx bxl-html5',
     },
@@ -38,20 +42,16 @@ export class SkillsService {
       icon: 'bx bxl-github',
     },
     {
-      title: 'Wordpress',
-      icon: 'bx bxl-wordpress',
-    },
-    {
       title: 'Meta for Developers',
       icon: 'bx bxl-meta',
     },
     {
-      title: 'Wit.ai',
-      icon: 'bx bx-conversation',
-    },
-    {
       title: 'Angular CDK',
       icon: 'bx bxl-angular',
+    },
+    {
+      title: 'Wordpress',
+      icon: 'bx bxl-wordpress',
     },
   ];
 

@@ -8,13 +8,13 @@
       >
         <i class="text-primary bx-md bx bx-x"></i>
       </button>
-      <h1 class="text-optional font-bold text-4xl mb-5 pr-8">
+      <h1 class="text-optional font-bold text-3xl mb-5 pr-8">
         {{ projectInfo.title }}
       </h1>
     </div>
-    <div class="flex flex-col justify-center items-center space-y-4">
+    <div class="flex flex-col justify-center items-center space-y-4 lg:px-3">
       <img class="w-full md:w-2/3 mx-auto" src="{{ projectInfo.img }}" />
-      <p class="text-center">{{ projectInfo.description }}</p>
+      <p class="text-center text-lg">{{ projectInfo.description }}</p>
       <div class="w-full">
         <div class="w-full flex flex-wrap flex-row justify-center">
           <div *ngFor="let technology of tech">
