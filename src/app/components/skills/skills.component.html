@@ -10,10 +10,12 @@
         </h1>
         <div
           class="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center md:space-x-2 w-11/12"
-        >
-          <div *ngFor="let tech of techs">
-            <app-tag icon="{{ tech.icon }}">{{ tech.title }}</app-tag>
-          </div>
+          >
+          @for (tech of techs; track tech) {
+            <div>
+              <app-tag icon="{{ tech.icon }}">{{ tech.title }}</app-tag>
+            </div>
+          }
         </div>
       </div>
       <div class="flex flex-col w-1/2">
@@ -22,10 +24,12 @@
         </h1>
         <div
           class="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center md:space-x-2 w-11/12"
-        >
-          <div *ngFor="let soft of softs">
-            <app-tag svg="{{ soft.svg }}">{{ soft.title }}</app-tag>
-          </div>
+          >
+          @for (soft of softs; track soft) {
+            <div>
+              <app-tag svg="{{ soft.svg }}">{{ soft.title }}</app-tag>
+            </div>
+          }
         </div>
       </div>
     </div>

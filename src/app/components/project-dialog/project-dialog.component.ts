@@ -5,7 +5,7 @@ import { DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
 import { Projects } from './../../models/portfolio.model';
 import { Skills } from './../../models/portfolio.model';
 import { SkillsService } from './../../services/skills.service';
-import { NgFor, NgIf, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 interface InputData {
   projectInfo: Projects;
@@ -20,10 +20,8 @@ interface OutputData {
     templateUrl: './project-dialog.component.html',
     standalone: true,
     imports: [
-        NgFor,
-        NgIf,
-        NgClass,
-    ],
+    NgClass
+],
 })
 export class ProjectDialogComponent {
   projectInfo: Projects;

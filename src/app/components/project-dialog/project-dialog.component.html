@@ -5,7 +5,7 @@
         type="button"
         class="absolute top-3 right-3 focus:outline-none p-2"
         (click)="closeDialog()"
-      >
+        >
         <i class="text-primary bx-md bx bx-x"></i>
       </button>
       <h1 class="text-optional font-bold text-3xl mb-5 pr-8">
@@ -17,19 +17,22 @@
       <p class="text-center text-lg">{{ projectInfo.description }}</p>
       <div class="w-full">
         <div class="w-full flex flex-wrap flex-row justify-center">
-          <div *ngFor="let technology of tech">
-            <div
-              *ngIf="projectInfo.technologies.includes(technology.title)"
-              class="flex flex-row items-center justify-center py-1 mr-2"
-            >
-              <i
-                class="text-2xl mr-2 text-auxiliar hover:text-primary"
-                [ngClass]="technology.icon"
-                title="{{ technology.title }}"
-              >
-              </i>
+          @for (technology of tech; track technology) {
+            <div>
+              @if (projectInfo.technologies.includes(technology.title)) {
+                <div
+                  class="flex flex-row items-center justify-center py-1 mr-2"
+                  >
+                  <i
+                    class="text-2xl mr-2 text-auxiliar hover:text-primary"
+                    [ngClass]="technology.icon"
+                    title="{{ technology.title }}"
+                    >
+                  </i>
+                </div>
+              }
             </div>
-          </div>
+          }
         </div>
       </div>
 
@@ -38,7 +41,7 @@
         target="_blank"
         rel="noopener noreferrer"
         href="{{ projectInfo.link }} "
-      >
+        >
         Link
         <i class='bx bx-link-external ml-1'></i>
       </a>
