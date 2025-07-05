@@ -18,9 +18,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('portfolio');
   });
 
-  it('should render title', () => {
+  it('should render title', async () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
+    await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('portfolio app is running!');
   });
