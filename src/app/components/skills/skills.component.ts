@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { Skills } from './../../models/portfolio.model';
 import { SkillsService } from './../../services/skills.service';
+import { NgFor } from '@angular/common';
+import { TagComponent } from '../tag/tag.component';
 
 @Component({
-  selector: 'app-skills',
-  templateUrl: './skills.component.html',
+    selector: 'app-skills',
+    templateUrl: './skills.component.html',
+    standalone: true,
+    imports: [NgFor, TagComponent],
 })
 export class SkillsComponent {
   techs: Skills[];

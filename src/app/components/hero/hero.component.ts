@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { RRSS } from './../../models/portfolio.model';
 import { RrssService } from './../../services/rrss.service';
+import { BtnBoxiconComponent } from '../btn-boxicon/btn-boxicon.component';
 
 @Component({
-  selector: 'app-hero',
-  templateUrl: './hero.component.html',
+    selector: 'app-hero',
+    templateUrl: './hero.component.html',
+    standalone: true,
+    imports: [BtnBoxiconComponent],
 })
 export class HeroComponent {
   rrssLinks: RRSS[];
