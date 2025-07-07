@@ -58,6 +58,7 @@ export class AppComponent implements AfterViewInit {
   private TOUCH_THRESHOLD = 30; // Umbral más pequeño para mayor sensibilidad
   private MOBILE_TOUCH_DELAY = 150; // Delay más corto para mejor respuesta
   private isScrolling = false; // Flag para prevenir scroll del navegador
+  private isVerticalSwipe = false; // Flag para detectar swipe vertical
 
   constructor(
     private elementRef: ElementRef,
@@ -94,9 +95,6 @@ export class AppComponent implements AfterViewInit {
   onWindowScroll(event: Event): void {
     // Si es mobile, no usar scroll para navegación
     if (this.isMobileDevice) {
-      // Prevenir scroll y mantener posición fija
-      event.preventDefault();
-      window.scrollTo(0, 0);
       return;
     }
 
@@ -129,6 +127,7 @@ export class AppComponent implements AfterViewInit {
     
     this.touchStartY = event.touches[0].clientY;
     this.isScrolling = false;
+    this.isVerticalSwipe = false;
   }
 
   /**
@@ -138,12 +137,19 @@ export class AppComponent implements AfterViewInit {
   onTouchMove(event: TouchEvent): void {
     if (!this.isMobileDevice) return;
     
-    // Prevenir scroll del navegador durante el swipe
-    if (this.startFlag) {
-      event.preventDefault();
-    }
+    const currentY = event.touches[0].clientY;
+    const deltaY = Math.abs(this.touchStartY - currentY);
     
-    this.isScrolling = true;
+    // Solo prevenir scroll si es un swipe vertical significativo
+    if (deltaY > this.TOUCH_THRESHOLD) {
+      this.isVerticalSwipe = true;
+      this.isScrolling = true;
+      
+      // Solo prevenir scroll si estamos en navegación de secciones
+      if (this.startFlag) {
+        event.preventDefault();
+      }
+    }
   }
 
   /**
@@ -153,11 +159,16 @@ export class AppComponent implements AfterViewInit {
   onTouchEnd(event: TouchEvent): void {
     if (!this.isMobileDevice) return;
     
-    // Prevenir cualquier acción por defecto del navegador
-    event.preventDefault();
-    
     this.touchEndY = event.changedTouches[0].clientY;
-    this.handleMobileSwipe();
+    
+    // Solo procesar si fue un swipe vertical
+    if (this.isVerticalSwipe) {
+      this.handleMobileSwipe();
+    }
+    
+    // Reset flags
+    this.isScrolling = false;
+    this.isVerticalSwipe = false;
   }
 
   /**
@@ -257,7 +268,7 @@ export class AppComponent implements AfterViewInit {
     const deltaY = this.touchStartY - this.touchEndY;
     const absDeltaY = Math.abs(deltaY);
     
-    // Solo procesar si el swipe es suficientemente largo Y si hubo movimiento
+    // Solo procesar si el swipe es suficientemente largo
     if (absDeltaY > this.TOUCH_THRESHOLD && this.isScrolling) {
       if (this.startFlag) {
         this.handleInteraction(() => {
@@ -270,8 +281,5 @@ export class AppComponent implements AfterViewInit {
         this.lastTouchTime = now;
       }
     }
-    
-    // Reset del flag
-    this.isScrolling = false;
   }
 }
