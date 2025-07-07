@@ -55,8 +55,9 @@ export class AppComponent implements AfterViewInit {
   private touchStartY = 0;
   private touchEndY = 0;
   private lastTouchTime = 0;
-  private TOUCH_THRESHOLD = 50;
-  private MOBILE_TOUCH_DELAY = 300; // ms para prevenir múltiples disparos
+  private TOUCH_THRESHOLD = 30; // Umbral más pequeño para mayor sensibilidad
+  private MOBILE_TOUCH_DELAY = 150; // Delay más corto para mejor respuesta
+  private isScrolling = false; // Flag para prevenir scroll del navegador
 
   constructor(
     private elementRef: ElementRef,
@@ -93,6 +94,9 @@ export class AppComponent implements AfterViewInit {
   onWindowScroll(event: Event): void {
     // Si es mobile, no usar scroll para navegación
     if (this.isMobileDevice) {
+      // Prevenir scroll y mantener posición fija
+      event.preventDefault();
+      window.scrollTo(0, 0);
       return;
     }
 
@@ -124,6 +128,22 @@ export class AppComponent implements AfterViewInit {
     if (!this.isMobileDevice) return;
     
     this.touchStartY = event.touches[0].clientY;
+    this.isScrolling = false;
+  }
+
+  /**
+   * Maneja el movimiento del touch en mobile
+   */
+  @HostListener('touchmove', ['$event'])
+  onTouchMove(event: TouchEvent): void {
+    if (!this.isMobileDevice) return;
+    
+    // Prevenir scroll del navegador durante el swipe
+    if (this.startFlag) {
+      event.preventDefault();
+    }
+    
+    this.isScrolling = true;
   }
 
   /**
@@ -132,6 +152,9 @@ export class AppComponent implements AfterViewInit {
   @HostListener('touchend', ['$event'])
   onTouchEnd(event: TouchEvent): void {
     if (!this.isMobileDevice) return;
+    
+    // Prevenir cualquier acción por defecto del navegador
+    event.preventDefault();
     
     this.touchEndY = event.changedTouches[0].clientY;
     this.handleMobileSwipe();
@@ -232,9 +255,10 @@ export class AppComponent implements AfterViewInit {
     }
 
     const deltaY = this.touchStartY - this.touchEndY;
+    const absDeltaY = Math.abs(deltaY);
     
-    // Solo procesar si el swipe es suficientemente largo
-    if (Math.abs(deltaY) > this.TOUCH_THRESHOLD) {
+    // Solo procesar si el swipe es suficientemente largo Y si hubo movimiento
+    if (absDeltaY > this.TOUCH_THRESHOLD && this.isScrolling) {
       if (this.startFlag) {
         this.handleInteraction(() => {
           if (deltaY > 0) {
@@ -246,5 +270,8 @@ export class AppComponent implements AfterViewInit {
         this.lastTouchTime = now;
       }
     }
+    
+    // Reset del flag
+    this.isScrolling = false;
   }
 }
