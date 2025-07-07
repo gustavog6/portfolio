@@ -1,6 +1,6 @@
-<div class="flex flex-col h-full w-full">
+<!-- <div class="flex flex-col h-full w-full">
   <app-navbar></app-navbar>
-  <div class="px-4 lg:px-28 mt-4">
+  <div class="px-4 lg:px-28 mt-4" id="page-scroller">
     <app-hero id="home"></app-hero>
     <app-about-me id="about"></app-about-me>
     <app-skills id="skills"></app-skills>
@@ -8,4 +8,38 @@
     <app-education id="education"></app-education>
     <app-contact id="contact"></app-contact>
   </div>
+</div> -->
+
+<div class="layout">
+
+  <div class="section-stick">
+    <div
+      *ngFor="let section of sections; let i = index"
+      class="stick"
+      (click)="goToSection(i + 1)"
+      [innerHTML]="section.icon">
+    </div>
+    <div
+      class="active"
+      [style.--current-section-index]="currentSection - 1"
+      [innerHTML]="sections[currentSection - 1].icon">
+    </div>
+  </div>
+
+  <section
+    *ngFor="let section of sections; let i = index"
+    [id]="section.id"
+    [style.transform]="getSectionTransform(i + 1)"
+    [style.zIndex]="sections.length - i">
+
+    <div [ngSwitch]="section.id" class="w-full h-full">
+      <app-hero *ngSwitchCase="'home'"></app-hero>
+      <app-about-me *ngSwitchCase="'about'"></app-about-me>
+      <app-skills *ngSwitchCase="'skills'"></app-skills>
+      <app-portfolio *ngSwitchCase="'portfolio'"></app-portfolio>
+      <app-education *ngSwitchCase="'education'"></app-education>
+      <app-contact *ngSwitchCase="'contact'"></app-contact>
+    </div>
+  </section>
+
 </div>

@@ -10,3 +10,13 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+body, html {
+  /* overflow: auto; */           // No forzar overflow aquí
+  -ms-overflow-style: none;       // IE y Edge: oculta la scrollbar
+  scrollbar-width: none;          // Firefox: oculta la scrollbar
+}
+
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none;                  // Chrome, Safari y Opera: oculta la scrollbar
+}

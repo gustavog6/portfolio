@@ -1,0 +1,88 @@
+// Oculta la barra de scroll nativa
+:host {
+  display: block;
+  height: 100%;
+  overflow: hidden; // Previene que el componente raíz muestre barras de scroll
+}
+
+// Estos estilos se aplican al contenido generado dentro de este componente
+::ng-deep body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow: hidden scroll; // Muestra barra de scroll vertical pero oculta la horizontal
+  -ms-overflow-style: none; // IE y Edge
+  scrollbar-width: none; // Firefox
+}
+
+::ng-deep body::-webkit-scrollbar {
+  display: none; // Chrome, Safari y Opera
+}
+
+// Layout principal que contiene las secciones
+.layout {
+  width: 100%;
+  position: relative;
+}
+
+// Estilos para cada sección de pantalla completa
+section {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.6s ease-in-out; // Coincide con TIME_OUT
+  // El transform se aplica dinámicamente desde el TS
+}
+
+// Navegación lateral
+.section-stick {
+  --stick-height: 35px;
+  --stick-gap: 15px;
+
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--stick-gap);
+  align-items: center;
+  z-index: 1000;
+}
+
+.section-stick .stick,
+.section-stick .active {
+  width: var(--stick-height);
+  height: var(--stick-height);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.section-stick .active {
+  position: absolute;
+  top: 0;
+  color: #333;
+  background-color: white;
+  box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, 0.4);
+  transform: translateY(calc(var(--current-section-index, 0) * (var(--stick-height) + var(--stick-gap))));
+  transition: transform 0.6s ease-in-out;
+}
+
+// Media query para móviles
+@media screen and (max-width: 576px) {
+  .section-stick {
+    --stick-height: 28px;
+    --stick-gap: 10px;
+    right: 15px;
+    bottom: 30px;
+  }
+}
