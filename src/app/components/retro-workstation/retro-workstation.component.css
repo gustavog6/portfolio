@@ -107,13 +107,10 @@
   }
 
   .mobile-nav {
-    height: 36px;
     flex: none;
     display: flex;
     gap: 4px;
-    padding: 4px 5px;
     background: #181c1f;
-    border-bottom: 2px solid #0b0f11;
   }
 
   .mobile-nav button {

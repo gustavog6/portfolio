@@ -287,6 +287,29 @@ app-root {
     white-space: nowrap;
   }
 
+  .workstation {
+    box-sizing: border-box;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) 0
+      env(safe-area-inset-left);
+  }
+
+  .workstation .canvas {
+    order: 1;
+  }
+
+  .workstation .mobile-nav {
+    order: 2;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 5px 5px calc(5px + env(safe-area-inset-bottom));
+    border-top: 2px solid #0b0f11;
+    border-bottom: 0;
+  }
+
+  .workstation .mobile-nav button {
+    min-height: 36px;
+  }
+
   .workstation app-workspace-tabs {
     display: none;
   }
