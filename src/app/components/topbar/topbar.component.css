@@ -1,0 +1,157 @@
+:host {
+  display: block;
+  flex: none;
+}
+
+.topbar {
+  height: 44px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #262a2d;
+  border-bottom: 2px solid #0b0f11;
+}
+
+.brand {
+  padding: 3px;
+  display: flex;
+  background: #0b0f11;
+  border: 1px solid #000;
+  font: 700 var(--type-label) "JetBrains Mono", monospace;
+  letter-spacing: 0.04em;
+}
+
+.brand-name {
+  padding: 3px 5px;
+  background: #fcb115;
+  color: #432c00;
+}
+
+.brand-kind {
+  padding: 3px 5px;
+  color: #ffb95a;
+}
+
+.connection {
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #181c1f;
+  border: 1px solid #0b0f11;
+  color: #d6c4ac;
+  font: var(--type-label) "JetBrains Mono", monospace;
+}
+
+.connection i {
+  width: 7px;
+  height: 7px;
+  background: #26d7a0;
+  box-shadow: 0 0 7px #26d7a0;
+}
+
+.social-links {
+  display: flex;
+  gap: 5px;
+}
+
+.social-links a,
+.cv-link {
+  min-height: 30px;
+  padding: 3px 7px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #181c1f;
+  border: 1px solid #0b0f11;
+  color: #d6c4ac;
+  text-decoration: none;
+  font: var(--type-caption) "JetBrains Mono", monospace;
+}
+
+.social-links a i,
+.cv-link i {
+  font-size: var(--type-subtitle);
+}
+
+.social-links a i {
+  color: var(--color-primary);
+}
+
+.cv-link i {
+  color: #34d7ca;
+  text-shadow: 0 0 6px #34d7ca80;
+}
+
+.cv-link {
+  margin-left: auto;
+}
+
+.social-links a:hover,
+.cv-link:hover {
+  color: #fff;
+  border-color: #8e5800;
+}
+
+.cv-link:focus-visible {
+  outline: 2px solid #ffd595;
+  outline-offset: 2px;
+}
+
+.language-switch {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  border: 1px solid #8e5800;
+  background: #181c1f;
+}
+
+.language-switch button {
+  min-width: 32px;
+  min-height: 28px;
+  padding: 3px 6px;
+  border: 0;
+  background: transparent;
+  color: #d6c4ac;
+  font: 700 var(--type-caption) "JetBrains Mono", monospace;
+  cursor: pointer;
+}
+
+.language-switch button.active {
+  background: #fcb115;
+  color: #432c00;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    height: 38px;
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .connection span,
+  .social-links a span,
+  .cv-link span {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-links a,
+  .cv-link {
+    min-width: 30px;
+    justify-content: center;
+    padding: 3px 5px;
+  }
+
+  .social-links a span,
+  .cv-link span {
+    display: none;
+  }
+
+  .language-switch button {
+    min-width: 28px;
+    padding: 3px 4px;
+  }
+}

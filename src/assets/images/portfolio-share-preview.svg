@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#181c1f"/>
+      <stop offset="1" stop-color="#101417"/>
+    </linearGradient>
+    <radialGradient id="avatar-glow">
+      <stop offset="0" stop-color="#00e3d2" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#00e3d2" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#000" stroke-opacity=".16"/>
+    </pattern>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M0 3.5H4" stroke="#00e3d2" stroke-opacity=".08"/>
+    </pattern>
+    <filter id="pixel-glow" x="-.5" y="-.5" width="2" height="2">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="4" fill="#181c1f" stroke="#3b4249" stroke-width="2"/>
+  <path d="M29 70H1171" stroke="#2e343a" stroke-width="2"/>
+  <rect x="58" y="48" width="12" height="12" fill="#34d7ca"/>
+  <text x="84" y="60" fill="#34d7ca" font-family="monospace" font-size="16" font-weight="700" letter-spacing="2">PORTFOLIO / ONLINE</text>
+
+  <rect x="72" y="112" width="390" height="420" fill="#111a1e" stroke="#225b60" stroke-width="2"/>
+  <rect x="74" y="114" width="386" height="416" fill="url(#scanlines)"/>
+  <ellipse cx="267" cy="390" rx="168" ry="130" fill="url(#avatar-glow)"/>
+  <path d="M126 170H408M126 480H408" stroke="#37d9cb" stroke-opacity=".45"/>
+  <g transform="translate(163 160) scale(4)" shape-rendering="crispEdges" filter="url(#pixel-glow)">
+    <rect x="13" y="5" width="28" height="12" fill="#412b32"/>
+    <rect x="9" y="10" width="28" height="12" fill="#412b32"/>
+    <rect x="17" y="11" width="28" height="12" fill="#412b32"/>
+    <rect x="13" y="23" width="24" height="24" fill="#d6956a"/>
+    <rect x="19" y="15" width="24" height="24" fill="#f0b889"/>
+    <rect x="15" y="15" width="24" height="24" fill="#f0b889"/>
+    <rect x="20" y="25" width="3" height="4" fill="#263137"/>
+    <rect x="31" y="25" width="3" height="4" fill="#263137"/>
+    <rect x="25" y="33" width="3" height="3" fill="#b75f56"/>
+    <path d="M17 41H35L44 66H8Z" fill="#237e82"/>
+    <rect x="29" y="53" width="5" height="5" fill="#fcb115"/>
+  </g>
+
+  <text x="526" y="192" fill="#9ba3a9" font-family="monospace" font-size="17" font-weight="700" letter-spacing="3">SOFTWARE ENGINEER</text>
+  <text x="522" y="270" fill="#e0e3e7" font-family="Arial, sans-serif" font-size="48" font-weight="700">Gustavo A. González</text>
+  <text x="522" y="326" fill="#e0e3e7" font-family="Arial, sans-serif" font-size="48" font-weight="700">Granadillo</text>
+  <rect x="522" y="354" width="72" height="4" fill="#34d7ca"/>
+  <text x="522" y="405" fill="#c5cbd0" font-family="Arial, sans-serif" font-size="23">
+    <tspan x="522" dy="0">Ingeniero de software full-stack</tspan>
+    <tspan x="522" dy="34">con más de 3 años de experiencia</tspan>
+    <tspan x="522" dy="34">en Angular, React, TypeScript,</tspan>
+    <tspan x="522" dy="34">PHP/Laravel y SQL.</tspan>
+  </text>
+  <text x="522" y="548" fill="#34d7ca" font-family="monospace" font-size="17" letter-spacing="1">GUSTAVOG6.NETLIFY.APP</text>
+  <text x="1140" y="548" text-anchor="end" fill="#727c83" font-family="monospace" font-size="15">FULL-STACK / WEB</text>
+</svg>

@@ -1,0 +1,177 @@
+{
+  "TOPBAR": {
+    "ROLE": "SOFTWARE ENGINEER",
+    "SOCIAL_LINKS": "Social links",
+    "LANGUAGE": "Language",
+    "CV": "RESUME",
+    "CV_ACTION": "Open CV in a new tab; download it from the PDF viewer"
+  },
+  "MOBILE": {
+    "NAVIGATION": "Mobile navigation",
+    "PROFILE": "PROFILE",
+    "SKILLS": "SKILLS",
+    "EXPERIENCE": "EXPERIENCE",
+    "PROJECTS": "PROJECTS",
+    "CONTACT": "CONTACT"
+  },
+  "AVATAR": {
+    "IMAGE_LABEL": "Animated pixel art illustration"
+  },
+  "PROFILE": {
+    "CARD": "PROFILE CARD",
+    "ACTIVE": "ACTIVE",
+    "ROLE": "SOFTWARE ENGINEER",
+    "BIO": "Software Engineer with a degree in Computer Engineering and 3+ years of experience in full-stack web development. Skilled in Angular, React, TypeScript, PHP/Laravel and SQL, with a strong ability to adapt quickly to different technology stacks. Experienced in requirements analysis, root cause analysis, and maintenance of legacy and production systems.",
+    "BIO_TITLE": "About me",
+    "READ_BIO": "READ MORE...",
+    "CLOSE_BIO": "Close biography",
+    "MISSION_LABEL": "CURRENT MISSION:",
+    "MISSION": "\"Searching for opportunities ⚡\"",
+    "FACTS": {
+      "EXPERIENCE": "Experience:",
+      "EXPERIENCE_VALUE": "3+ years",
+      "LOCATION": "Location:",
+      "LOCATION_VALUE": "Venezuela - [Remote]",
+      "AVAILABILITY": "Availability:",
+      "AVAILABILITY_VALUE": "Immediate",
+      "EDUCATION": "Education:",
+      "EDUCATION_VALUE": "B.S. Computer Engineering (2024)",
+      "INSTITUTION": "Institution:",
+      "LANGUAGES": "Languages:",
+      "LANGUAGES_VALUE": "Spanish | English (B2 - Upper-Intermediate)"
+    }
+  },
+  "SKILLS": {
+    "TITLE": "SKILLS",
+    "ACTIVE_COUNT": "ACTIVE",
+    "FILTER_LABEL": "Filter skills",
+    "FILTERS": {
+      "ALL": "ALL",
+      "TECHNICAL": "TECHNICAL",
+      "SOFT": "SOFT SKILLS"
+    },
+    "ITEMS": {
+      "javascript": "JavaScript",
+      "typescript": "TypeScript",
+      "angular": "Angular",
+      "angularjs": "AngularJS",
+      "react": "React",
+      "php": "PHP",
+      "laravel": "Laravel",
+      "sql": "SQL",
+      "css": "CSS",
+      "html": "HTML",
+      "tailwind": "Tailwind",
+      "git": "Git",
+      "figma": "Figma",
+      "bootstrap": "Bootstrap",
+      "bulma": "Bulma",
+      "python": "Python",
+      "flask": "Flask",
+      "scrum": "Scrum",
+      "documentation": "Technical Documentation",
+      "communication": "Technical/non-technical communication",
+      "ai-assisted-development": "AI-Assisted Development",
+      "adaptability": "Adaptability",
+      "flexibility": "Flexibility",
+      "teamwork": "Teamwork",
+      "results-oriented": "Results-oriented mindset",
+      "management-planning": "Management & planning",
+      "leadership": "Leadership"
+    }
+  },
+  "TABS": {
+    "ARIA_LABEL": "Portfolio sections",
+    "EXPERIENCE": "EXPERIENCE",
+    "PROJECTS": "PROJECTS",
+    "CONTACT": "CONTACT"
+  },
+  "EXPERIENCE": {
+    "ARIA_LABEL": "Professional experience and volunteering",
+    "TITLE": "PROFESSIONAL EXPERIENCE + VOLUNTEERING",
+    "FOOTER": "3+ years of experience in full-stack web development",
+    "ENTRIES": {
+      "emqu-technical-lead": {
+        "POSITION": "Technical Lead",
+        "LOCATION": "Tomball, USA (Remote)",
+        "HIGHLIGHTS": {
+          "lead-web-app": "Led the development, maintenance, and support of a web app. for personnel control and security, which integrates 5 mobile applications into its core.",
+          "lead-requirements": "Managed technical requirements and architect specific solutions tailored to client needs.",
+          "lead-mentorship": "Supervised and provided technical mentorship to a multidisciplinary team of 6 team members."
+        }
+      },
+      "emqu-fullstack": {
+        "POSITION": "Fullstack Developer",
+        "LOCATION": "Tomball, USA (Remote)",
+        "HIGHLIGHTS": {
+          "fullstack-ui": "Developed and refactored views to enhance the UI/UX of control applications.",
+          "fullstack-backend": "Refactored and optimized complex backend functions to improve system performance.",
+          "fullstack-workflows": "Updated and restored key legacy workflows that had been discontinued."
+        }
+      },
+      "dilvant-web-developer": {
+        "POSITION": "Web Developer",
+        "LOCATION": "Lima, Peru (Remote)",
+        "HIGHLIGHTS": {
+          "dilvant-crm": "Launched a CRM-focused (PWA) in a production environment for sales and management.",
+          "dilvant-websites": "Developed websites ensuring a fluid UI/UX and an attractive, modern design.",
+          "dilvant-cards": "Created digital business cards and invitations for professional clients."
+        }
+      },
+      "inexco-analyst": {
+        "POSITION": "IT Functional Analyst",
+        "LOCATION": "Puerto Ordaz, Venezuela",
+        "HIGHLIGHTS": {
+          "inexco-crm": "Managed requirements, testing phases, and user training for an insurance sales CRM."
+        }
+      },
+      "jacinto-convit-volunteering": {
+        "POSITION": "Frontend Developer",
+        "LOCATION": "Caracas, Venezuela (Remote)",
+        "HIGHLIGHTS": {
+          "convit-library": "Contribution to the redesign and development for the launch of the Digital Library.",
+          "convit-requirements": "Coordination of requirements gathering with the program coordinator."
+        }
+      }
+    }
+  },
+  "PROJECTS": {
+    "ARIA_LABEL": "Projects",
+    "OPEN": "OPEN PROJECT",
+    "ITEMS": {
+      "trello-clone": {
+        "TITLE": "Trello Clone",
+        "DESCRIPTION": "Clone of the Trello application (under construction) has 3 pages so far: Login, Boards, and Board. Built with Angular and TailwindCSS, it also makes use of the Angular CDK to use directives and agnostic components like Drag and Drop, Overlays, Accordion and more..."
+      },
+      "crypto-chatbot": {
+        "TITLE": "Crypto Chatbot",
+        "DESCRIPTION": "Chatbot integrated into META Messenger that provides cryptocurrency information with simple and detailed indicators, in addition to just prices. Modeled and trained using Wit.ai, built with javascript, hosted on ngrok, and connected to Messenger using META for Developers."
+      },
+      "to-do-app": {
+        "TITLE": "To Do App",
+        "DESCRIPTION": "To do application developed with React, following a design pattern inspired by FreeCodeCamp. A task can be created, edited and deleted. It also has an integrated router using React Router Dom. And the tasks persist using Localstorage. Hosted on Github Pages."
+      },
+      "scroll-test": {
+        "TITLE": "Scroll test project",
+        "DESCRIPTION": "Temporary card to test vertical scrolling when the project list exceeds the visible area."
+      }
+    }
+  },
+  "CONTACT": {
+    "TITLE": "DIRECT MESSAGE CONSOLE",
+    "CHANNEL": "DIRECT CHANNEL",
+    "FIELDS": {
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "SUBJECT": "Subject",
+      "MESSAGE": "Message"
+    },
+    "PLACEHOLDERS": {
+      "NAME": "Your name",
+      "EMAIL": "you@email.com",
+      "SUBJECT": "Message subject",
+      "MESSAGE": "Hi Gustavo, are you available for a technical interview?"
+    },
+    "SEND": "SEND MESSAGE"
+  }
+}

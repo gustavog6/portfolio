@@ -1,0 +1,16 @@
+<section class="project-list workstation-scroll" [attr.aria-label]="'PROJECTS.ARIA_LABEL' | translate">
+  @for (project of projects; track project.id) {
+    <article class="project-card">
+      <header><i class="bx bx-folder-open project-mark" aria-hidden="true"></i><h3>{{ ('PROJECTS.ITEMS.' + project.id + '.TITLE') | translate }}</h3></header>
+      <p>{{ ('PROJECTS.ITEMS.' + project.id + '.DESCRIPTION') | translate }}</p>
+      <footer>
+        <div class="tags">
+          @for (technology of project.technologies; track technology) {
+            <span>{{ technology }}</span>
+          }
+        </div>
+        <a [href]="project.link" target="_blank" rel="noopener noreferrer">{{ 'PROJECTS.OPEN' | translate }} ↗</a>
+      </footer>
+    </article>
+  }
+</section>

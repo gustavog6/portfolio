@@ -1,0 +1,108 @@
+:host {
+  display: block;
+  height: 100%;
+  min-height: 0;
+}
+
+.contact {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #0b0f11;
+  border: 2px inset #363a3d;
+}
+
+.message-panel {
+  flex: 1;
+  min-height: 0;
+  padding: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  background: #181c1f;
+  border: 1px solid #383e44;
+}
+
+.message-panel header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.message-panel h2 {
+  margin: 0;
+  color: #ffd595;
+  font: 700 var(--type-title) "Space Grotesk", sans-serif;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.message-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #d6c4ac;
+  font: var(--type-label) "JetBrains Mono", monospace;
+}
+
+.message-panel label span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.message-panel i {
+  color: var(--color-primary);
+}
+
+.message-panel input,
+.message-panel textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 7px;
+  background: #0b0f11;
+  border: 2px inset #363a3d;
+  color: #e0e3e7;
+  font: var(--type-body) "JetBrains Mono", monospace;
+}
+
+.message-panel textarea {
+  resize: vertical;
+}
+
+.subject-field,
+.message-field {
+  grid-column: 1 / -1;
+}
+
+.message-panel footer {
+  text-align: right;
+}
+
+.message-panel button {
+  padding: 8px 12px;
+  background: #fcb115;
+  border: 2px outset #fed268;
+  color: #432c00;
+  font: 700 var(--type-label) "JetBrains Mono", monospace;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 6px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

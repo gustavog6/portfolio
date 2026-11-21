@@ -1,0 +1,152 @@
+:host {
+  display: block;
+}
+
+.capsule,
+.capsule * {
+  cursor: default;
+}
+
+.capsule {
+  width: 100%;
+  height: 112px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #225b60;
+  background:
+    radial-gradient(ellipse at 50% 75%, #145b58 0, transparent 35%),
+    repeating-linear-gradient(0deg, #102127 0 2px, #111a1e 2px 4px);
+  color: inherit;
+  font: inherit;
+}
+
+.capsule:focus-visible {
+  outline: 2px solid #ffd595;
+  outline-offset: 2px;
+}
+
+.capsule::before,
+.capsule::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: #37d9cb;
+  opacity: 0.38;
+  box-shadow: 0 0 9px #00f5d4;
+}
+
+.capsule::before {
+  top: 22%;
+}
+
+.capsule::after {
+  bottom: 19%;
+}
+
+.avatar-positioner {
+  position: relative;
+  width: 52px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  transform: translate3d(var(--pointer-x, 0), var(--pointer-y, 0), 0);
+  transition: transform 220ms ease-out;
+  will-change: transform;
+}
+
+.pixel-person {
+  position: relative;
+  display: block;
+  width: 52px;
+  height: 76px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #00e3d2);
+}
+
+.pixel-person i {
+  position: absolute;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.hair {
+  top: 5px;
+  left: 13px;
+  width: 28px;
+  height: 12px;
+  background: #412b32;
+  box-shadow: -4px 5px #412b32, 4px 6px #412b32;
+}
+
+.face {
+  top: 15px;
+  left: 15px;
+  width: 24px;
+  height: 24px;
+  background: #f0b889;
+  box-shadow: 4px 0 #f0b889, -2px 8px #d6956a;
+}
+
+.face::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  width: 3px;
+  height: 3px;
+  background: #263137;
+  box-shadow: 11px 0 #263137, 5px 8px #b75f56;
+}
+
+.shirt {
+  top: 41px;
+  left: 8px;
+  width: 36px;
+  height: 25px;
+  background: #237e82;
+  clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+}
+
+.badge {
+  top: 53px;
+  left: 29px;
+  width: 5px;
+  height: 5px;
+  background: #fcb115;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, #00e3d20e 3px 4px);
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-positioner {
+    transform: none;
+    transition: none;
+  }
+
+  .pixel-person {
+    animation: none;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .capsule {
+    height: 86px;
+  }
+}

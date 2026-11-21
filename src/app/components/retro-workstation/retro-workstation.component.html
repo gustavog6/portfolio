@@ -1,0 +1,36 @@
+<div class="workstation">
+  <app-workstation-topbar />
+  <nav class="mobile-nav" [attr.aria-label]="'MOBILE.NAVIGATION' | translate">
+    @for (section of mobileSections; track section.id) {
+      <button type="button" [class.active]="mobileSection() === section.id" [attr.aria-current]="mobileSection() === section.id ? 'page' : null" (click)="selectMobileSection(section.id)">[{{ section.label | translate }}]</button>
+    }
+  </nav>
+  <main class="canvas">
+    <div class="frame">
+      <!-- <div class="titlebar"><span>▣</span><span>Software Engineer</span></div> -->
+      <div class="layout">
+        <aside class="profile-slot" [class.mobile-visible]="mobileSection() === 'perfil'">
+          <app-profile-aside
+            [contactActive]="activeTab() === 'contacto'"
+            [tabChangeCount]="tabChangeCount()"
+          />
+        </aside>
+        <section class="dashboard">
+          <div class="skills-slot" [class.mobile-visible]="mobileSection() === 'skills'"><app-skills-matrix /></div>
+          <section class="workspace-slot" [class.mobile-visible]="mobileSection() === 'proyectos' || mobileSection() === 'contacto' || mobileSection() === 'experiencia'">
+            <app-workspace-tabs [activeTab]="activeTab()" (tabChange)="selectTab($event)" />
+            <div class="view">
+              @if (activeTab() === 'contacto') {
+                <app-contact-view />
+              } @else if (activeTab() === 'proyectos') {
+                <app-projects-view />
+              } @else {
+                <app-experience-view />
+              }
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>

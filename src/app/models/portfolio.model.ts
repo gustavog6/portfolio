@@ -6,12 +6,6 @@ export interface Projects {
   technologies: string[];
 }
 
-export interface Skills {
-  title: string;
-  icon?: string;
-  svg?: string;
-}
-
 export interface RRSS {
   title: string;
   link: string;

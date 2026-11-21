@@ -1,0 +1,61 @@
+<section class="profile panel">
+  <div class="module-label"><span>{{ 'PROFILE.CARD' | translate }}</span><span>{{ 'PROFILE.ACTIVE' | translate }}</span></div>
+  <app-avatar-capsule
+    [contactActive]="contactActive()"
+    [tabChangeCount]="tabChangeCount()"
+  />
+  <div class="identity">
+    <div class="name">Gustavo A. González Granadillo</div>
+    <div class="role">{{ 'PROFILE.ROLE' | translate }}</div>
+  </div>
+  <div class="bio-container">
+    <p #bio class="bio">
+      <span #bioSource class="bio-source">{{ 'PROFILE.BIO' | translate }}</span>
+      <span #bioPreview class="bio-preview"></span>
+      <button
+        #bioMore
+        class="bio-more"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="profile-bio-dialog"
+        (click)="bioDialog.showModal()"
+      >
+        {{ 'PROFILE.READ_BIO' | translate }}
+      </button>
+    </p>
+  </div>
+  <dialog
+    #bioDialog
+    id="profile-bio-dialog"
+    class="bio-dialog"
+    aria-labelledby="profile-bio-dialog-title"
+  >
+    <header class="bio-dialog-header">
+      <h2 id="profile-bio-dialog-title">{{ 'PROFILE.BIO_TITLE' | translate }}</h2>
+      <button
+        class="bio-close"
+        type="button"
+        [attr.aria-label]="'PROFILE.CLOSE_BIO' | translate"
+        (click)="bioDialog.close()"
+      >
+        <i class="bx bx-x" aria-hidden="true"></i>
+      </button>
+    </header>
+    <p>{{ 'PROFILE.BIO' | translate }}</p>
+  </dialog>
+  <div class="mission"><b>{{ 'PROFILE.MISSION_LABEL' | translate }}</b><span>{{ 'PROFILE.MISSION' | translate }}</span></div>
+  <dl class="facts">
+    <div><dt>{{ 'PROFILE.FACTS.EXPERIENCE' | translate }}</dt><dd>{{ 'PROFILE.FACTS.EXPERIENCE_VALUE' | translate }}</dd></div>
+    <div><dt>{{ 'PROFILE.FACTS.LOCATION' | translate }}</dt><dd>{{ 'PROFILE.FACTS.LOCATION_VALUE' | translate }}</dd></div>
+    <div><dt>{{ 'PROFILE.FACTS.AVAILABILITY' | translate }}</dt><dd class="available">{{ 'PROFILE.FACTS.AVAILABILITY_VALUE' | translate }}</dd></div>
+    <div><dt>{{ 'PROFILE.FACTS.EDUCATION' | translate }}</dt><dd>{{ 'PROFILE.FACTS.EDUCATION_VALUE' | translate }}</dd></div>
+    <div class="institution-fact">
+      <dt>{{ 'PROFILE.FACTS.INSTITUTION' | translate }}</dt>
+      <dd>
+        <span class="institution-full">Universidad Nacional Experimental de Guayana</span>
+        <span class="institution-short">UNEG</span>
+      </dd>
+    </div>
+    <div><dt>{{ 'PROFILE.FACTS.LANGUAGES' | translate }}</dt><dd>{{ 'PROFILE.FACTS.LANGUAGES_VALUE' | translate }}</dd></div>
+  </dl>
+</section>

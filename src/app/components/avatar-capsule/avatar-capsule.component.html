@@ -1,0 +1,36 @@
+<button
+  type="button"
+  class="capsule"
+  [attr.aria-label]="'AVATAR.IMAGE_LABEL' | translate"
+  (pointerenter)="onCapsulePointerEnter()"
+  (click)="onAvatarClick()"
+>
+  <span class="scanlines" aria-hidden="true"></span>
+  <span
+    class="avatar-positioner"
+    [style.--pointer-x]="pointerOffset().x + 'px'"
+    [style.--pointer-y]="pointerOffset().y + 'px'"
+    aria-hidden="true"
+  >
+    <span class="pixel-person">
+      <i class="hair"></i>
+      <i class="face">
+        <span class="eyes" [class.attentive]="contactActive()">
+          <span class="eye eye-left"></span>
+          <span class="eye eye-right" [class.winking]="isWinking()"></span>
+        </span>
+        <span class="mouth"></span>
+      </i>
+      <i class="shirt"></i>
+      <i class="badge"></i>
+      <i
+        class="hand"
+        [class.hand-up]="!handGesture() && scrollGesture() === 'up'"
+        [class.hand-down]="!handGesture() && scrollGesture() === 'down'"
+        [class.hand-wave]="handGesture() === 'wave'"
+        [class.hand-thumbs-up]="handGesture() === 'thumbs-up'"
+      ></i>
+    </span>
+  </span>
+  <!-- <span class="caption">DEV / 01</span> -->
+</button>

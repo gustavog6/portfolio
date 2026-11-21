@@ -1,0 +1,23 @@
+<section class="log workstation-scroll" [attr.aria-label]="'EXPERIENCE.ARIA_LABEL' | translate">
+  <!-- <header><i class="bx bx-briefcase-alt-2" aria-hidden="true"></i><h2>{{ 'EXPERIENCE.TITLE' | translate }}</h2></header> -->
+  <div class="entries">
+    @for (entry of entries; track entry.id) {
+      <article class="entry" [class.volunteering]="entry.type === 'volunteering'">
+        <span class="marker" aria-hidden="true"></span>
+        <div class="entry-body">
+          <div class="entry-heading">
+            <div><h3>{{ ('EXPERIENCE.ENTRIES.' + entry.id + '.POSITION') | translate }}</h3><span class="company">{{ entry.company }}</span></div>
+            <span class="period">{{ entry.period }}</span>
+          </div>
+          <p class="location">{{ ('EXPERIENCE.ENTRIES.' + entry.id + '.LOCATION') | translate }}</p>
+          <ul>
+            @for (highlight of entry.highlights; track highlight.id) {
+              <li>{{ ('EXPERIENCE.ENTRIES.' + entry.id + '.HIGHLIGHTS.' + highlight.id) | translate }}</li>
+            }
+          </ul>
+        </div>
+      </article>
+    }
+  </div>
+  <!-- <footer>&gt; {{ 'EXPERIENCE.FOOTER' | translate }}</footer> -->
+</section>

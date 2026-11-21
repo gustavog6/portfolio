@@ -1,0 +1,18 @@
+<section class="skills-panel panel workstation-scroll">
+  <header class="skills-header">
+    <div class="heading"><span class="medal" aria-hidden="true">✦</span><h2>{{ 'SKILLS.TITLE' | translate }}</h2><span class="count">{{ skills.length }} {{ 'SKILLS.ACTIVE_COUNT' | translate }}</span></div>
+    <div class="filters" [attr.aria-label]="'SKILLS.FILTER_LABEL' | translate">
+      <button type="button" [class.selected]="activeFilter() === 'todas'" [attr.aria-pressed]="activeFilter() === 'todas'" (click)="setFilter('todas')">[{{ 'SKILLS.FILTERS.ALL' | translate }}]</button>
+      <button type="button" [class.selected]="activeFilter() === 'tecnicas'" [attr.aria-pressed]="activeFilter() === 'tecnicas'" (click)="setFilter('tecnicas')">[{{ 'SKILLS.FILTERS.TECHNICAL' | translate }}]</button>
+      <button type="button" [class.selected]="activeFilter() === 'soft'" [attr.aria-pressed]="activeFilter() === 'soft'" (click)="setFilter('soft')">[{{ 'SKILLS.FILTERS.SOFT' | translate }}]</button>
+    </div>
+  </header>
+  <div class="skill-grid">
+    @for (skill of filteredSkills(); track skill.id) {
+      <article class="skill">
+        <span class="skill-icon"><app-skill-icon [icon]="skill.icon" /></span>
+        <span class="skill-copy"><b>{{ ('SKILLS.ITEMS.' + skill.id) | translate }}</b></span>
+      </article>
+    }
+  </div>
+</section>

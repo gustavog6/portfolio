@@ -1,0 +1,157 @@
+:host {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+}
+
+.profile {
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background: #181c1f;
+}
+
+.panel {
+  border-top: 2px solid #363a3d;
+  border-left: 2px solid #363a3d;
+  border-right: 2px solid #0b0f11;
+  border-bottom: 2px solid #0b0f11;
+}
+
+.module-label {
+  display: flex;
+  justify-content: space-between;
+  color: #34d7ca;
+  font: 700 var(--type-caption) "JetBrains Mono", monospace;
+}
+
+.module-label span + span {
+  color: #d6c4ac;
+  font-weight: 400;
+}
+
+.identity {
+  position: relative;
+  min-width: 0;
+  padding: 7px;
+  background: #fcb115;
+  color: #432c00;
+}
+
+.name {
+  overflow: hidden;
+  padding-right: 48px;
+  font: 700 var(--type-title) "Space Grotesk", sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.online {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  padding: 2px 4px;
+  background: #0b0f11;
+  color: #26d7a0;
+  font: 700 var(--type-caption) "JetBrains Mono", monospace;
+}
+
+.role {
+  margin-top: 3px;
+  font: 700 var(--type-label) "JetBrains Mono", monospace;
+}
+
+.bio {
+  color: #e0e3e7;
+  font: var(--type-body) / 1.45 "JetBrains Mono", monospace;
+}
+
+.mission {
+  padding: 6px;
+  background: #101417;
+  border: 1px dashed #363a3d;
+  font: var(--type-label) "JetBrains Mono", monospace;
+}
+
+.mission b,
+.mission span {
+  display: block;
+}
+
+.mission b {
+  margin-bottom: 3px;
+  color: #ffb95a;
+}
+
+.mission span {
+  color: #ffd595;
+  font-style: italic;
+}
+
+.facts {
+  flex: 1;
+  min-height: 100px;
+  margin: 0;
+  padding: 5px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #101417;
+  border: 2px inset #313538;
+  font: var(--type-caption) "JetBrains Mono", monospace;
+}
+
+.facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 4px 0;
+  border-bottom: 1px solid #313538;
+}
+
+.facts div:last-child {
+  border: 0;
+}
+
+.facts dt {
+  color: #d6c4ac;
+  white-space: nowrap;
+}
+
+.facts dd {
+  margin: 0;
+  color: #ffd595;
+  text-align: right;
+}
+
+.facts .available {
+  color: #26d7a0;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    gap: 5px;
+    padding: 6px;
+  }
+
+  .bio {
+    line-height: 1.3;
+  }
+
+  .mission {
+    padding: 5px;
+  }
+
+  .facts {
+    min-height: 80px;
+  }
+
+  .facts dd {
+    max-width: 72%;
+  }
+}

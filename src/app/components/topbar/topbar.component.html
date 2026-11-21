@@ -1,0 +1,28 @@
+<header class="topbar">
+  <div class="brand" aria-label="SNGX DEV">
+    <span class="brand-name">SNGX</span>
+    <span class="brand-kind">DEV</span>
+  </div>
+  <span class="connection" [attr.aria-label]="'TOPBAR.ROLE' | translate"><i aria-hidden="true"></i><span>{{ 'TOPBAR.ROLE' | translate }}</span></span>
+  <a
+    class="cv-link"
+    [href]="cvUrl()"
+    target="_blank"
+    rel="noopener noreferrer"
+    [attr.aria-label]="'TOPBAR.CV_ACTION' | translate"
+    [attr.title]="'TOPBAR.CV_ACTION' | translate"
+  >
+    <i class="bx bx-file" aria-hidden="true"></i><span>{{ 'TOPBAR.CV' | translate }}</span>
+  </a>
+  <nav class="social-links" [attr.aria-label]="'TOPBAR.SOCIAL_LINKS' | translate">
+    @for (channel of channels; track channel.id) {
+      <a [href]="channel.link" target="_blank" rel="noopener noreferrer" [attr.aria-label]="channel.title" [attr.title]="channel.title">
+        <i [class]="channel.icon" aria-hidden="true"></i><span>{{ channel.title }}</span>
+      </a>
+    }
+  </nav>
+  <div class="language-switch" role="group" [attr.aria-label]="'TOPBAR.LANGUAGE' | translate">
+    <button type="button" [class.active]="currentLanguage() === 'en'" [attr.aria-pressed]="currentLanguage() === 'en'" (click)="setLanguage('en')">EN</button>
+    <button type="button" [class.active]="currentLanguage() === 'es'" [attr.aria-pressed]="currentLanguage() === 'es'" (click)="setLanguage('es')">ES</button>
+  </div>
+</header>

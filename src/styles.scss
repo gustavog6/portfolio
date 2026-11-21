@@ -1,12 +1,424 @@
-/* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #15141f;
-  color: #eee;
+:root {
+  --type-caption: 0.75rem;
+  --type-label: 0.875rem;
+  --type-body: 1rem;
+  --type-subtitle: 1.125rem;
+  --type-title: 1.375rem;
+  --color-primary: #fcb115;
+  --color-primary-light: #ffd595;
 }
-html {
-  scroll-behavior: smooth;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #101417;
+}
+
+body {
+  color: #e0e3e7;
+  overscroll-behavior: none;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.workstation .canvas {
+  background-image: linear-gradient(#00000020 1px, transparent 1px),
+    linear-gradient(90deg, #00000020 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.workstation .frame {
+  width: 100%;
+  max-width: 1800px;
+  flex: 1;
+  min-height: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: #181c1f;
+  border: 2px solid #0b0f11;
+  box-sizing: border-box;
+}
+
+.workstation-scroll {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #b47d0d #101417;
+  scrollbar-width: thin;
+}
+
+.workstation .pixel-person .hand {
+  z-index: 2;
+  top: 47px;
+  left: 5px;
+  width: 8px;
+  height: 7px;
+  background: #f0b889;
+  opacity: 0;
+  transform: translate3d(0, 7px, 0) scale(0.5);
+  transform-origin: center;
+  transition: opacity 120ms ease, transform 180ms ease-out;
+}
+
+.workstation .pixel-person .hand::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: -7px;
+  width: 3px;
+  height: 8px;
+  background: #f0b889;
+}
+
+.workstation .pixel-person .hand::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 3px;
+  width: 4px;
+  height: 3px;
+  background: #d6956a;
+}
+
+.workstation .pixel-person .face .eyes {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 24px;
+  height: 4px;
+  transform-origin: center;
+  animation: avatar-blink 5s ease-in-out infinite;
+}
+
+.workstation .pixel-person .face .eye {
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 4px;
+  background: #263137;
+}
+
+.workstation .pixel-person .face .eye-left {
+  left: 5px;
+}
+
+.workstation .pixel-person .face .eye-right {
+  left: 16px;
+}
+
+.workstation .pixel-person .face .eyes.attentive .eye {
+  width: 4px;
+  height: 5px;
+}
+
+.workstation .pixel-person .face .mouth {
+  position: absolute;
+  left: 10px;
+  top: 18px;
+  width: 3px;
+  height: 3px;
+  background: #b75f56;
+}
+
+.workstation .pixel-person .hand-up {
+  opacity: 1;
+  animation: avatar-point-up 240ms ease-in-out infinite alternate;
+}
+
+.workstation .pixel-person .hand-down {
+  opacity: 1;
+  animation: avatar-point-down 240ms ease-in-out infinite alternate;
+}
+
+.workstation .pixel-person .hand-wave {
+  top: 43px;
+  left: -2px;
+  width: 11px;
+  opacity: 1;
+  transform-origin: center bottom;
+  animation: avatar-wave 260ms ease-in-out 2;
+}
+
+.workstation .pixel-person .hand-wave::before {
+  left: 0;
+  top: -8px;
+  width: 2px;
+  height: 8px;
+  box-shadow:
+    3px -1px 0 #f0b889,
+    6px 0 0 #f0b889,
+    9px 1px 0 #f0b889;
+}
+
+.workstation .pixel-person .hand-wave::after {
+  left: 9px;
+  top: 1px;
+  width: 5px;
+  height: 3px;
+  transform: rotate(30deg);
+}
+
+.workstation .pixel-person .hand-thumbs-up {
+  opacity: 1;
+  animation: avatar-thumbs-up 700ms ease-in-out;
+}
+
+.workstation .pixel-person .eye-right.winking {
+  animation: avatar-wink 280ms ease-in-out;
+}
+
+@keyframes avatar-point-up {
+  to {
+    transform: translate3d(4px, -3px, 0) scale(1);
+  }
+}
+
+@keyframes avatar-point-down {
+  from {
+    transform: translate3d(4px, 3px, 0) rotate(180deg) scale(1);
+  }
+
+  to {
+    transform: translate3d(4px, 6px, 0) rotate(180deg) scale(1);
+  }
+}
+
+@keyframes avatar-wave {
+  0%,
+  100% {
+    transform: translate3d(-1px, -1px, 0) rotate(-10deg) scale(1);
+  }
+
+  50% {
+    transform: translate3d(2px, -1px, 0) rotate(10deg) scale(1);
+  }
+}
+
+@keyframes avatar-thumbs-up {
+  0%,
+  100% {
+    transform: translate3d(0, 7px, 0) rotate(0) scale(0.5);
+  }
+
+  35%,
+  70% {
+    transform: translate3d(4px, -4px, 0) rotate(-22deg) scale(1.1);
+  }
+}
+
+@keyframes avatar-wink {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  45%,
+  70% {
+    transform: scaleY(0.05);
+  }
+}
+
+@keyframes avatar-blink {
+  0%,
+  42%,
+  48%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  44%,
+  46% {
+    transform: scaleY(0.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workstation .pixel-person .hand-up {
+    animation: none;
+    transform: translate3d(4px, -3px, 0);
+  }
+
+  .workstation .pixel-person .hand-down {
+    animation: none;
+    transform: translate3d(4px, 3px, 0) rotate(180deg);
+  }
+
+  .workstation .pixel-person .hand-wave,
+  .workstation .pixel-person .hand-thumbs-up {
+    animation: none;
+    transform: translate3d(4px, -3px, 0);
+  }
+
+  .workstation .pixel-person .eye-right.winking {
+    animation: none;
+  }
+
+  .workstation .pixel-person .face .eyes {
+    animation: none;
+  }
+
+  .workstation .pixel-person .face .eye {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --type-caption: 0.6875rem;
+    --type-label: 0.8125rem;
+    --type-body: 0.875rem;
+    --type-subtitle: 1rem;
+    --type-title: 1.25rem;
+  }
+
+  .workstation .mobile-nav {
+    font-size: clamp(0.5rem, 2.1vw, var(--type-label));
+    white-space: nowrap;
+  }
+
+  .workstation app-workspace-tabs {
+    display: none;
+  }
+}
+
+.workstation .profile .bio-more {
+  display: none;
+}
+
+.workstation .profile-slot {
+  container-name: profile;
+  container-type: inline-size;
+}
+
+.workstation .profile .bio-container {
+  margin: 0;
+  padding: 7px;
+  background: #0b0f11;
+  border: 1px solid #313538;
+}
+
+.workstation .profile .bio {
+  margin: 0;
+}
+
+.workstation .profile .bio-preview {
+  display: none;
+}
+
+.workstation .profile .institution-short {
+  display: none;
+}
+
+@container profile (max-width: 420px) {
+  .workstation .profile .institution-full {
+    display: none;
+  }
+
+  .workstation .profile .institution-short {
+    display: inline;
+  }
+
+  .workstation .profile .institution-fact dd {
+    white-space: nowrap;
+  }
+}
+
+.workstation .profile .bio-dialog {
+  box-sizing: border-box;
+  width: min(90vw, 560px);
+  max-height: 80vh;
+  max-height: 80dvh;
+  margin: auto;
+  padding: 16px;
+  overflow: auto;
+  border: 2px solid #34d7ca;
+  background: #181c1f;
+  color: #e0e3e7;
+  box-shadow: 0 0 20px #00e3d244;
+}
+
+.workstation .profile .bio-dialog::backdrop {
+  background: #0b0f11cc;
+  backdrop-filter: blur(2px);
+}
+
+.workstation .profile .bio-dialog-header {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #383e44;
+}
+
+.workstation .profile .bio-dialog-header h2 {
+  margin: 0;
+  color: #34d7ca;
+  font: 700 var(--type-subtitle) "Space Grotesk", sans-serif;
+}
+
+.workstation .profile .bio-dialog p {
+  margin: 0;
+  font: var(--type-body) / 1.6 "JetBrains Mono", monospace;
+}
+
+.workstation .profile .bio-close {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: #262a2d;
+  border: 1px solid #383e44;
+  color: #ffd595;
+  cursor: pointer;
+}
+
+.workstation .profile .bio-close i {
+  font-size: var(--type-subtitle);
+}
+
+@media (max-width: 768px) {
+  .workstation .profile .bio {
+    max-height: 6.5em;
+    overflow: hidden;
+  }
+
+  .workstation .profile .bio-container {
+    padding: 4px 6px;
+  }
+
+  .workstation .profile .bio-source {
+    display: none;
+  }
+
+  .workstation .profile .bio-preview {
+    display: inline;
+  }
+
+  .workstation .profile .bio {
+    padding-right: 0;
+  }
+
+  .workstation .profile .bio-more {
+    padding: 0;
+    display: inline;
+    vertical-align: baseline;
+    background: transparent;
+    border: 0;
+    color: #34d7ca;
+    font: 700 var(--type-caption) "JetBrains Mono", monospace;
+    line-height: inherit;
+    cursor: pointer;
+  }
 }

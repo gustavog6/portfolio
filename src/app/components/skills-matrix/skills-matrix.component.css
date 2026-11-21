@@ -1,0 +1,152 @@
+:host {
+  display: block;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.panel {
+  border-top: 2px solid #363a3d;
+  border-left: 2px solid #363a3d;
+  border-right: 2px solid #0b0f11;
+  border-bottom: 2px solid #0b0f11;
+  background: #262a2d;
+}
+
+.skills-panel {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 8px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0 6px;
+  background: #262a2d;
+  border-bottom: 1px solid #383e44;
+}
+
+.heading,
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.heading h2 {
+  margin: 0;
+  color: var(--color-primary-light);
+  font: 700 var(--type-title) "Space Grotesk", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.medal {
+  color: #ffb95a;
+}
+
+.count {
+  padding: 3px 5px;
+  background: #313538;
+  color: #ffb95a;
+  border: 1px solid #000;
+  font: var(--type-caption) "JetBrains Mono", monospace;
+}
+
+.filters button {
+  padding: 4px 5px;
+  background: #1c2023;
+  border: 1px solid #514533;
+  color: #d6c4ac;
+  font: var(--type-label) "JetBrains Mono", monospace;
+  cursor: pointer;
+}
+
+.filters button.selected {
+  background: #fcb115;
+  color: #432c00;
+  font-weight: 700;
+}
+
+.skill-grid {
+  flex: 1 0 auto;
+  min-height: 0;
+  padding-top: 7px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-auto-rows: 68px;
+  gap: 5px;
+}
+
+.skill {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding: 5px 5px 5px 10px;
+  background: #0b0f11;
+  border: 1px solid #383e44;
+}
+
+.skill-icon {
+  flex: none;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+}
+
+.skill-copy {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  overflow: hidden;
+}
+
+.skill-copy b {
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  color: #e0e3e7;
+  font: 700 var(--type-label) / 1.2 "JetBrains Mono", monospace;
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .skills-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 80px;
+    gap: 4px;
+  }
+
+  .skill {
+    gap: 4px;
+    padding: 3px;
+  }
+
+  .skill-copy {
+    padding-left: 6px;
+  }
+
+  .skill-copy b {
+    font-size: calc(var(--type-label) - 1.5px);
+  }
+
+  .skill-icon {
+    width: 24px;
+    height: 24px;
+  }
+}

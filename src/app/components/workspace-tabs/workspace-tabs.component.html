@@ -1,0 +1,5 @@
+<nav class="tabs" [attr.aria-label]="'TABS.ARIA_LABEL' | translate">
+  @for (tab of tabs; track tab.id) {
+    <button type="button" [class.active]="activeTab() === tab.id" [attr.aria-current]="activeTab() === tab.id ? 'page' : null" (click)="tabChange.emit(tab.id)"><i [class]="'bx ' + tab.icon" aria-hidden="true"></i> [{{ tab.label | translate }}]</button>
+  }
+</nav>
