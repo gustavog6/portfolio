@@ -1,4 +1,13 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild, inject, input } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { AvatarCapsuleComponent } from '../avatar-capsule/avatar-capsule.component';
@@ -13,10 +22,13 @@ import { AvatarCapsuleComponent } from '../avatar-capsule/avatar-capsule.compone
 export class ProfileAsideComponent implements AfterViewInit, OnDestroy {
   readonly contactActive = input.required<boolean>();
   readonly tabChangeCount = input.required<number>();
+  readonly bioTruncated = signal(false);
 
   private readonly translate = inject(TranslateService);
-  @ViewChild('bio', { static: true }) private bio!: ElementRef<HTMLParagraphElement>;
+  @ViewChild('profile', { static: true }) private profile!: ElementRef<HTMLElement>;
+  @ViewChild('bioContainer', { static: true }) private bioContainer!: ElementRef<HTMLElement>;
   @ViewChild('bioSource', { static: true }) private bioSource!: ElementRef<HTMLSpanElement>;
+  @ViewChild('bioMeasure', { static: true }) private bioMeasure!: ElementRef<HTMLSpanElement>;
   @ViewChild('bioPreview', { static: true }) private bioPreview!: ElementRef<HTMLSpanElement>;
   @ViewChild('bioMore', { static: true }) private bioMore!: ElementRef<HTMLButtonElement>;
 
@@ -27,7 +39,9 @@ export class ProfileAsideComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.bioResizeObserver = new ResizeObserver(() => this.scheduleBioPreview());
-    this.bioResizeObserver.observe(this.bio.nativeElement);
+    this.bioResizeObserver.observe(this.profile.nativeElement);
+    this.bioResizeObserver.observe(this.bioContainer.nativeElement);
+    this.bioResizeObserver.observe(this.bioMeasure.nativeElement);
     this.bioResizeObserver.observe(this.bioMore.nativeElement);
 
     this.bioContentObserver = new MutationObserver(() => this.scheduleBioPreview());
@@ -37,6 +51,7 @@ export class ProfileAsideComponent implements AfterViewInit, OnDestroy {
       subtree: true,
     };
     this.bioContentObserver.observe(this.bioSource.nativeElement, textChanges);
+    this.bioContentObserver.observe(this.bioMeasure.nativeElement, textChanges);
     this.bioContentObserver.observe(this.bioMore.nativeElement, textChanges);
     this.languageChangeSubscription = this.translate.onLangChange.subscribe(() => this.scheduleBioPreview());
 
@@ -63,15 +78,40 @@ export class ProfileAsideComponent implements AfterViewInit, OnDestroy {
   }
 
   private updateBioPreview(): void {
-    const bio = this.bio.nativeElement;
     const source = this.bioSource.nativeElement.textContent?.trim() ?? '';
     const preview = this.bioPreview.nativeElement;
-    const button = this.bioMore.nativeElement;
 
-    if (getComputedStyle(preview).display === 'none' || !source) {
+    if (!window.matchMedia('(max-width: 768px)').matches) {
+      this.bioTruncated.set(false);
+      preview.textContent = '';
       return;
     }
 
+    if (!source) {
+      return;
+    }
+
+    const container = this.bioContainer.nativeElement;
+    const containerStyle = getComputedStyle(container);
+    const containerHeight =
+      container.clientHeight -
+      parseFloat(containerStyle.paddingTop) -
+      parseFloat(containerStyle.paddingBottom);
+    const fullBioHeight = this.bioMeasure.nativeElement.getBoundingClientRect().height;
+
+    if (fullBioHeight <= containerHeight + 0.5) {
+      this.bioTruncated.set(false);
+      preview.textContent = '';
+      return;
+    }
+
+    if (!this.bioTruncated()) {
+      this.bioTruncated.set(true);
+      this.scheduleBioPreview();
+      return;
+    }
+
+    const button = this.bioMore.nativeElement;
     let low = 0;
     let high = source.length;
     let bestPreview = ' ';
@@ -83,9 +123,17 @@ export class ProfileAsideComponent implements AfterViewInit, OnDestroy {
       const candidate = source.slice(0, end).trimEnd();
       preview.textContent = `${candidate} `;
 
-      const bioRect = bio.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
       const buttonRect = button.getBoundingClientRect();
-      const fits = buttonRect.bottom <= bioRect.bottom + 0.5 && buttonRect.right <= bioRect.right + 0.5;
+      const bottomLimit =
+        containerRect.bottom -
+        parseFloat(containerStyle.borderBottomWidth) -
+        parseFloat(containerStyle.paddingBottom);
+      const rightLimit =
+        containerRect.right -
+        parseFloat(containerStyle.borderRightWidth) -
+        parseFloat(containerStyle.paddingRight);
+      const fits = buttonRect.bottom <= bottomLimit + 0.5 && buttonRect.right <= rightLimit + 0.5;
 
       if (fits) {
         bestPreview = `${candidate} `;

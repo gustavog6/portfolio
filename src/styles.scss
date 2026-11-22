@@ -333,6 +333,17 @@ app-root {
 
 .workstation .profile .bio {
   margin: 0;
+  position: relative;
+}
+
+.workstation .profile .bio-measure {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .workstation .profile .bio-preview {
@@ -412,28 +423,49 @@ app-root {
 }
 
 @media (max-width: 768px) {
-  .workstation .profile .bio {
-    max-height: 10.5em;
+  .workstation .profile .bio-container {
+    padding: 4px 6px;
+    box-sizing: border-box;
+  }
+
+  .workstation .profile > .module-label,
+  .workstation .profile > app-avatar-capsule,
+  .workstation .profile > .identity,
+  .workstation .profile > .mission {
+    flex-shrink: 0;
+  }
+
+  .workstation .profile > .bio-container {
+    flex: 0 1 auto;
+    min-height: 0;
     overflow: hidden;
   }
 
-  .workstation .profile .bio-container {
-    padding: 4px 6px;
+  .workstation .profile.bio-truncated > .bio-container {
+    flex-grow: 1;
   }
 
-  .workstation .profile .bio-source {
-    display: none;
+  .workstation .profile > .facts {
+    flex: 1 0 auto;
   }
 
-  .workstation .profile .bio-preview {
-    display: inline;
+  .workstation .profile.bio-truncated > .facts {
+    flex-grow: 0;
   }
 
   .workstation .profile .bio {
-    padding-right: 0;
+    overflow: hidden;
   }
 
-  .workstation .profile .bio-more {
+  .workstation .profile.bio-truncated .bio-source {
+    display: none;
+  }
+
+  .workstation .profile.bio-truncated .bio-preview {
+    display: inline;
+  }
+
+  .workstation .profile.bio-truncated .bio-more {
     padding: 0;
     display: inline;
     vertical-align: baseline;

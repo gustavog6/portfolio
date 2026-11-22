@@ -1,4 +1,4 @@
-<section class="profile panel">
+<section #profile class="profile panel" [class.bio-truncated]="bioTruncated()">
   <div class="module-label"><span>{{ 'PROFILE.CARD' | translate }}</span><span>{{ 'PROFILE.ACTIVE' | translate }}</span></div>
   <app-avatar-capsule
     [contactActive]="contactActive()"
@@ -8,9 +8,10 @@
     <div class="name">Gustavo A. González Granadillo</div>
     <div class="role">{{ 'PROFILE.ROLE' | translate }}</div>
   </div>
-  <div class="bio-container">
-    <p #bio class="bio">
+  <div #bioContainer class="bio-container">
+    <p class="bio">
       <span #bioSource class="bio-source">{{ 'PROFILE.BIO' | translate }}</span>
+      <span #bioMeasure class="bio-measure" aria-hidden="true">{{ 'PROFILE.BIO' | translate }}</span>
       <span #bioPreview class="bio-preview"></span>
       <button
         #bioMore
