@@ -17,11 +17,13 @@
         </aside>
         <section class="dashboard">
           <div class="skills-slot" [class.mobile-visible]="mobileSection() === 'skills'"><app-skills-matrix /></div>
-          <section class="workspace-slot" [class.mobile-visible]="mobileSection() === 'proyectos' || mobileSection() === 'contacto' || mobileSection() === 'experiencia'">
+          <section class="workspace-slot" [class.mobile-visible]="mobileSection() === 'servicios' || mobileSection() === 'proyectos' || mobileSection() === 'contacto' || mobileSection() === 'experiencia'">
             <app-workspace-tabs [activeTab]="activeTab()" (tabChange)="selectTab($event)" />
             <div class="view">
-              @if (activeTab() === 'contacto') {
-                <app-contact-view />
+              @if (activeTab() === 'servicios') {
+                <app-services-view (contactRequested)="requestServiceContact($event)" />
+              } @else if (activeTab() === 'contacto') {
+                <app-contact-view [serviceIntent]="contactIntent()" />
               } @else if (activeTab() === 'proyectos') {
                 <app-projects-view />
               } @else {

@@ -10,6 +10,7 @@
     "NAVIGATION": "Mobile navigation",
     "PROFILE": "PROFILE",
     "SKILLS": "SKILLS",
+    "SERVICES": "SERVICES",
     "EXPERIENCE": "EXPERIENCE",
     "PROJECTS": "PROJECTS",
     "CONTACT": "CONTACT"
@@ -82,9 +83,73 @@
   },
   "TABS": {
     "ARIA_LABEL": "Portfolio sections",
+    "SERVICES": "SERVICES",
     "EXPERIENCE": "EXPERIENCE",
     "PROJECTS": "PROJECTS",
     "CONTACT": "CONTACT"
+  },
+  "SERVICES": {
+    "ARIA_LABEL": "Event and experience software services",
+    "TITLE": "SERVICES // EVENT & EXPERIENCE SOFTWARE",
+    "STATUS": "AVAILABLE FOR PROJECTS",
+    "HERO": {
+      "TITLE": "Software is also part of your event experience.",
+      "DESCRIPTION": "I design and build event websites, interactive digital invitations, and custom experience software to transform how guests live every moment — from the very first spark of anticipation to real-time control on event day. Software can elevate, complement, and become part of your celebration — and I can build it for you.",
+      "TAGS": {
+        "EVENT_SITES": "Event websites",
+        "INTERACTIVE_INVITATIONS": "Interactive invitations",
+        "EXPERIENCE_SOFTWARE": "Experience software",
+        "REALTIME_PANELS": "Real-time panels"
+      }
+    },
+    "PILLARS": {
+      "TITLE": "HOW SOFTWARE ELEVATES YOUR EVENT",
+      "CTA": "ASK ABOUT THIS",
+      "ITEMS": {
+        "expectation": {
+          "TITLE": "BUILDS ANTICIPATION",
+          "DESCRIPTION": "Bespoke invitations and event sites with custom visual identity, interactive storytelling, countdown timers, and mobile-first design that excites from the first click."
+        },
+        "logistics": {
+          "TITLE": "STREAMLINES LOGISTICS",
+          "DESCRIPTION": "Smart RSVP with per-guest passes and plus-ones, dynamic itinerary, map directions, dress code, and gift registry all in one place."
+        },
+        "experience": {
+          "TITLE": "BECOMES PART OF THE EXPERIENCE",
+          "DESCRIPTION": "Guest wish walls, interactive moments, and a real-time admin panel so hosts and organizers stay in complete control without friction."
+        }
+      }
+    },
+    "EXAMPLES": {
+      "TITLE": "REAL EXAMPLES",
+      "STATUS": "PRODUCTION",
+      "VIEW_DEMO": "VIEW DEMO",
+      "QUOTE_SIMILAR": "WANT ONE LIKE THIS",
+      "TAGS": {
+        "WEDDING": "Wedding",
+        "SMART_RSVP": "Smart RSVP",
+        "ADMIN_PANEL": "Admin Panel",
+        "CUSTOM_DESIGN": "Custom Design",
+        "CHRISTMAS": "Holiday & New Year",
+        "THEMED_EXPERIENCE": "Themed Experience",
+        "RSVP": "RSVP",
+        "MOBILE_FIRST": "Mobile-first"
+      },
+      "ITEMS": {
+        "wedding": {
+          "TITLE": "Interactive Wedding Invitation",
+          "DESCRIPTION": "Custom interactive wedding experience featuring the couple's story, countdown, itinerary, venue maps, per-guest pass RSVP confirmation, and a real-time management panel."
+        },
+        "christmas": {
+          "TITLE": "Christmas Party Invitation",
+          "DESCRIPTION": "Interactive holiday celebration website with festive theming, event schedule, guest confirmation, key details, and centralized organizer management."
+        }
+      }
+    },
+    "CTA": {
+      "TEXT": "Planning a wedding, private celebration, or corporate event? Let's make software an unforgettable part of your experience.",
+      "BUTTON": "REQUEST PROPOSAL"
+    }
   },
   "EXPERIENCE": {
     "ARIA_LABEL": "Professional experience and volunteering",
@@ -139,6 +204,14 @@
     "ARIA_LABEL": "Projects",
     "OPEN": "OPEN PROJECT",
     "ITEMS": {
+      "vivento-cards": {
+        "TITLE": "Vivento Cards",
+        "DESCRIPTION": "Vivento Cards is a commercial interactive digital invitation suite launched to production and deployed live under custom vivento.day subdomains (such as christmas-card-one.vivento.day and wedding-card-one.vivento.day). Powered by a unified single-repository architecture with a shared core engine and lazy-loaded visual templates, it features private token-based guest access, multi-step RSVP with companion and menu selection, countdown timers with .ics export, interactive venue maps, a moderated collaborative photo gallery, and a protected admin dashboard with live customization plus PDF and Excel reporting. Built through AI-assisted development using React 19, Vite, Tailwind CSS, Framer Motion, ExcelJS, jsPDF, and Supabase (100% relational PostgreSQL with RLS, secure RPCs, Auth, and Storage), and hosted in production on Vercel."
+      },
+      "clausulamesta": {
+        "TITLE": "Clausulamesta",
+        "DESCRIPTION": "Production web application for LALIGA Fantasy managers, live at clausulamesta.club with $0 infrastructure cost. It combines a daily market tracker (~650 players with prices and trends), a side-by-side 5-player comparator with shareable links, LaLiga standings and rankings, and interactive loan and release-clause calculators. Built through AI-assisted development using a lightweight zero-dependency architecture (HTML5, CSS3, Vanilla JavaScript) as an installable PWA, powered by automated Node.js data pipelines and daily Telegram summaries via GitHub Actions, and deployed on GitHub Pages with a custom domain and full technical SEO."
+      },
       "trello-clone": {
         "TITLE": "Trello Clone",
         "DESCRIPTION": "Clone of the Trello application (under construction) has 3 pages so far: Login, Boards, and Board. Built with Angular and TailwindCSS, it also makes use of the Angular CDK to use directives and agnostic components like Drag and Drop, Overlays, Accordion and more..."
@@ -150,16 +223,45 @@
       "to-do-app": {
         "TITLE": "To Do App",
         "DESCRIPTION": "To do application developed with React, following a design pattern inspired by FreeCodeCamp. A task can be created, edited and deleted. It also has an integrated router using React Router Dom. And the tasks persist using Localstorage. Hosted on Github Pages."
-      },
-      "scroll-test": {
-        "TITLE": "Scroll test project",
-        "DESCRIPTION": "Temporary card to test vertical scrolling when the project list exceeds the visible area."
       }
     }
   },
   "CONTACT": {
     "TITLE": "DIRECT MESSAGE CONSOLE",
     "CHANNEL": "DIRECT CHANNEL",
+    "SERVICE_CONTEXT_NOTE": "I pre-filled a subject and message to save you time — feel free to tweak them and share your event details.",
+    "SERVICE_PRESETS": {
+      "general": {
+        "LABEL": "Event Software Proposal",
+        "SUBJECT": "Proposal: custom website / software for my event",
+        "MESSAGE": "Hi Gustavo, I saw your Services tab and would love to discuss building a custom website or digital experience for my upcoming event. Estimated date and event type:"
+      },
+      "wedding": {
+        "LABEL": "Interactive Wedding Invitation",
+        "SUBJECT": "Quote: Interactive Digital Wedding Invitation",
+        "MESSAGE": "Hi Gustavo, I saw your Interactive Wedding Invitation demo and would love something similar for our wedding (with RSVP, itinerary, and guest management). Could you share availability and a proposal?"
+      },
+      "christmas": {
+        "LABEL": "Christmas / Themed Party Invitation",
+        "SUBJECT": "Quote: Interactive Holiday / Themed Event Invitation",
+        "MESSAGE": "Hi Gustavo, I saw your Christmas Party Invitation demo and would like to build a similar interactive experience for our celebration. Can we discuss details and pricing?"
+      },
+      "expectation": {
+        "LABEL": "Bespoke Event Site & Visual Identity",
+        "SUBJECT": "Inquiry: custom interactive event site / invitation",
+        "MESSAGE": "Hi Gustavo, I want to build anticipation for my event with a bespoke website or digital invitation featuring custom design, countdown, and mobile-first UX. Let's talk!"
+      },
+      "logistics": {
+        "LABEL": "Smart RSVP & Event Logistics",
+        "SUBJECT": "Inquiry: smart RSVP and digital event logistics",
+        "MESSAGE": "Hi Gustavo, I need to streamline my event logistics with smart RSVP, guest pass control, maps, and a dynamic itinerary in one place. Are you available to discuss?"
+      },
+      "experience": {
+        "LABEL": "Interactive Experience & Real-Time Panel",
+        "SUBJECT": "Inquiry: interactive event software & real-time admin panel",
+        "MESSAGE": "Hi Gustavo, I want software to be an active part of my event with interactive guest features and a real-time management panel. I'd love to request a proposal."
+      }
+    },
     "FIELDS": {
       "NAME": "Name",
       "EMAIL": "Email",

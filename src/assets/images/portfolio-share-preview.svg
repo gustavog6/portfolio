@@ -29,12 +29,13 @@
   <path d="M29 70H1171" stroke="#2e343a" stroke-width="2"/>
   <rect x="58" y="48" width="12" height="12" fill="#34d7ca"/>
   <text x="84" y="60" fill="#34d7ca" font-family="monospace" font-size="16" font-weight="700" letter-spacing="2">PORTFOLIO / ONLINE</text>
+  <text x="1140" y="60" text-anchor="end" fill="#fcb115" font-family="monospace" font-size="15" font-weight="700" letter-spacing="1">FULL-STACK · EVENTOS</text>
 
-  <rect x="72" y="112" width="390" height="420" fill="#111a1e" stroke="#225b60" stroke-width="2"/>
-  <rect x="74" y="114" width="386" height="416" fill="url(#scanlines)"/>
-  <ellipse cx="267" cy="390" rx="168" ry="130" fill="url(#avatar-glow)"/>
-  <path d="M126 170H408M126 480H408" stroke="#37d9cb" stroke-opacity=".45"/>
-  <g transform="translate(163 160) scale(4)" shape-rendering="crispEdges" filter="url(#pixel-glow)">
+  <rect x="82" y="112" width="380" height="420" fill="#111a1e" stroke="#225b60" stroke-width="2"/>
+  <rect x="84" y="114" width="376" height="416" fill="url(#scanlines)"/>
+  <ellipse cx="272" cy="390" rx="165" ry="130" fill="url(#avatar-glow)"/>
+  <path d="M132 170H412M132 480H412" stroke="#37d9cb" stroke-opacity=".45"/>
+  <g transform="translate(168 160) scale(4)" shape-rendering="crispEdges" filter="url(#pixel-glow)">
     <rect x="13" y="5" width="28" height="12" fill="#412b32"/>
     <rect x="9" y="10" width="28" height="12" fill="#412b32"/>
     <rect x="17" y="11" width="28" height="12" fill="#412b32"/>
@@ -48,16 +49,15 @@
     <rect x="29" y="53" width="5" height="5" fill="#fcb115"/>
   </g>
 
-  <text x="526" y="192" fill="#9ba3a9" font-family="monospace" font-size="17" font-weight="700" letter-spacing="3">SOFTWARE ENGINEER</text>
-  <text x="522" y="270" fill="#e0e3e7" font-family="Arial, sans-serif" font-size="48" font-weight="700">Gustavo A. González</text>
-  <text x="522" y="326" fill="#e0e3e7" font-family="Arial, sans-serif" font-size="48" font-weight="700">Granadillo</text>
-  <rect x="522" y="354" width="72" height="4" fill="#34d7ca"/>
-  <text x="522" y="405" fill="#c5cbd0" font-family="Arial, sans-serif" font-size="23">
-    <tspan x="522" dy="0">Ingeniero de software full-stack</tspan>
-    <tspan x="522" dy="34">con más de 3 años de experiencia</tspan>
-    <tspan x="522" dy="34">en Angular, React, TypeScript,</tspan>
-    <tspan x="522" dy="34">PHP/Laravel y SQL.</tspan>
+  <text x="518" y="182" fill="#fcb115" font-family="monospace" font-size="16" font-weight="700" letter-spacing="2">FULL-STACK ENGINEER · SOFTWARE PARA EVENTOS</text>
+  <text x="516" y="254" fill="#e0e3e7" font-family="Arial, sans-serif" font-size="48" font-weight="700">Gustavo A. González</text>
+  <text x="516" y="310" fill="#e0e3e7" font-family="Arial, sans-serif" font-size="48" font-weight="700">Granadillo</text>
+  <rect x="516" y="338" width="76" height="4" fill="#34d7ca"/>
+  <text x="516" y="388" fill="#c5cbd0" font-family="Arial, sans-serif" font-size="22">
+    <tspan x="516" dy="0">Desarrollo web full-stack (Angular, React,</tspan>
+    <tspan x="516" dy="34">TypeScript, Laravel y SQL) + sitios de eventos,</tspan>
+    <tspan x="516" dy="34">invitaciones interactivas y software a medida.</tspan>
   </text>
-  <text x="522" y="548" fill="#34d7ca" font-family="monospace" font-size="17" letter-spacing="1">GUSTAVOG6.NETLIFY.APP</text>
-  <text x="1140" y="548" text-anchor="end" fill="#727c83" font-family="monospace" font-size="15">FULL-STACK / WEB</text>
+  <text x="516" y="544" fill="#34d7ca" font-family="monospace" font-size="17" letter-spacing="1">GUSTAVOG6.NETLIFY.APP</text>
+  <text x="1140" y="544" text-anchor="end" fill="#727c83" font-family="monospace" font-size="15">WEB / EXPERIENCIAS</text>
 </svg>

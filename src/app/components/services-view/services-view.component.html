@@ -1,0 +1,82 @@
+<section class="services-log workstation-scroll" [attr.aria-label]="'SERVICES.ARIA_LABEL' | translate">
+  <header class="services-header">
+    <div class="services-title">
+      <i class="bx bx-customize" aria-hidden="true"></i>
+      <h2>{{ 'SERVICES.TITLE' | translate }}</h2>
+    </div>
+    <span class="status-badge">
+      <i class="status-dot" aria-hidden="true"></i>
+      {{ 'SERVICES.STATUS' | translate }}
+    </span>
+  </header>
+
+  <article class="hero-card">
+    <h3>{{ 'SERVICES.HERO.TITLE' | translate }}</h3>
+    <p>{{ 'SERVICES.HERO.DESCRIPTION' | translate }}</p>
+    <div class="capability-tags">
+      @for (tag of capabilityKeys; track tag.key) {
+        <span [class.accent-cyan]="tag.accent === 'cyan'" [class.accent-gold]="tag.accent === 'gold'">
+          [{{ ('SERVICES.HERO.TAGS.' + tag.key) | translate }}]
+        </span>
+      }
+    </div>
+  </article>
+
+  <section class="services-group" [attr.aria-label]="'SERVICES.PILLARS.TITLE' | translate">
+    <h3 class="group-heading">
+      <i class="bx bx-star" aria-hidden="true"></i>
+      <span>{{ 'SERVICES.PILLARS.TITLE' | translate }}</span>
+    </h3>
+    <div class="pillars-grid">
+      @for (pillar of pillars; track pillar.id) {
+        <article class="pillar-card" [class.accent-cyan]="pillar.accent === 'cyan'">
+          <h4>{{ ('SERVICES.PILLARS.ITEMS.' + pillar.id + '.TITLE') | translate }}</h4>
+          <p>{{ ('SERVICES.PILLARS.ITEMS.' + pillar.id + '.DESCRIPTION') | translate }}</p>
+          <button class="pillar-cta" type="button" (click)="contactRequested.emit(pillar.id)">
+            {{ 'SERVICES.PILLARS.CTA' | translate }} →
+          </button>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="services-group" [attr.aria-label]="'SERVICES.EXAMPLES.TITLE' | translate">
+    <h3 class="group-heading">
+      <i class="bx bx-star" aria-hidden="true"></i>
+      <span>{{ 'SERVICES.EXAMPLES.TITLE' | translate }}</span>
+    </h3>
+    <div class="examples-grid">
+      @for (example of examples; track example.id) {
+        <article class="example-card">
+          <div class="example-body">
+            <div class="example-heading">
+              <h4>{{ ('SERVICES.EXAMPLES.ITEMS.' + example.id + '.TITLE') | translate }}</h4>
+              <span class="example-status">{{ 'SERVICES.EXAMPLES.STATUS' | translate }}</span>
+            </div>
+            <p>{{ ('SERVICES.EXAMPLES.ITEMS.' + example.id + '.DESCRIPTION') | translate }}</p>
+            <div class="example-tags">
+              @for (tagKey of example.tagKeys; track tagKey) {
+                <span>[{{ ('SERVICES.EXAMPLES.TAGS.' + tagKey) | translate }}]</span>
+              }
+            </div>
+          </div>
+          <div class="example-actions">
+            <a class="action-btn" [href]="example.demoUrl" target="_blank" rel="noopener noreferrer">
+              {{ 'SERVICES.EXAMPLES.VIEW_DEMO' | translate }} ↗
+            </a>
+            <button class="secondary-btn" type="button" (click)="contactRequested.emit(example.id)">
+              {{ 'SERVICES.EXAMPLES.QUOTE_SIMILAR' | translate }} →
+            </button>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <footer class="cta-banner">
+    <p>{{ 'SERVICES.CTA.TEXT' | translate }}</p>
+    <button class="action-btn" type="button" (click)="contactRequested.emit('general')">
+      {{ 'SERVICES.CTA.BUTTON' | translate }} →
+    </button>
+  </footer>
+</section>

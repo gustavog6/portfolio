@@ -1,5 +1,12 @@
-export type WorkTab = 'contacto' | 'proyectos' | 'experiencia';
+export type WorkTab = 'servicios' | 'contacto' | 'proyectos' | 'experiencia';
 export type MobileSection = 'perfil' | 'skills' | WorkTab;
+export type ServiceContactIntent =
+  | 'general'
+  | 'wedding'
+  | 'christmas'
+  | 'expectation'
+  | 'logistics'
+  | 'experience';
 export type SkillFilter = 'todas' | 'tecnicas' | 'soft';
 export type SkillIconPack = 'brands' | 'basic';
 

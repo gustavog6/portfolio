@@ -10,6 +10,7 @@
     "NAVIGATION": "Navegación móvil",
     "PROFILE": "PERFIL",
     "SKILLS": "HABILIDADES",
+    "SERVICES": "SERVICIOS",
     "EXPERIENCE": "EXPERIENCIA",
     "PROJECTS": "PROYECTOS",
     "CONTACT": "CONTACTO"
@@ -82,9 +83,73 @@
   },
   "TABS": {
     "ARIA_LABEL": "Secciones del portafolio",
+    "SERVICES": "SERVICIOS",
     "EXPERIENCE": "EXPERIENCIA",
     "PROJECTS": "PROYECTOS",
     "CONTACT": "CONTACTO"
+  },
+  "SERVICES": {
+    "ARIA_LABEL": "Servicios de software para eventos y experiencias",
+    "TITLE": "SERVICIOS // SOFTWARE PARA EVENTOS Y EXPERIENCIAS",
+    "STATUS": "DISPONIBLE PARA PROYECTOS",
+    "HERO": {
+      "TITLE": "El software también es parte de la experiencia de tu evento.",
+      "DESCRIPTION": "Diseño y desarrollo sitios web de eventos, invitaciones digitales interactivas y software a medida para transformar cómo tus invitados viven cada momento: desde la primera expectativa hasta el control en tiempo real el día del evento. El software puede impulsar, complementar y elevar tu celebración — y yo puedo construirlo para ti.",
+      "TAGS": {
+        "EVENT_SITES": "Sitios de eventos",
+        "INTERACTIVE_INVITATIONS": "Invitaciones interactivas",
+        "EXPERIENCE_SOFTWARE": "Software de experiencia",
+        "REALTIME_PANELS": "Paneles en tiempo real"
+      }
+    },
+    "PILLARS": {
+      "TITLE": "CÓMO EL SOFTWARE IMPULSA TU EVENTO",
+      "CTA": "COTIZAR ESTE ENFOQUE",
+      "ITEMS": {
+        "expectation": {
+          "TITLE": "IMPULSA LA EXPECTATIVA",
+          "DESCRIPTION": "Invitaciones y sitios web con identidad visual a medida, narrativa interactiva, cuenta regresiva y diseño mobile-first que emociona desde el primer clic."
+        },
+        "logistics": {
+          "TITLE": "COMPLEMENTA LA LOGÍSTICA",
+          "DESCRIPTION": "Confirmación de asistencia (RSVP) con control de pases y acompañantes, itinerario dinámico, ubicación en mapa, código de vestimenta y mesa de regalos en un solo lugar."
+        },
+        "experience": {
+          "TITLE": "FORMA PARTE DE LA EXPERIENCIA",
+          "DESCRIPTION": "Muros de buenos deseos, dinámicas interactivas y un panel de administración en tiempo real para que anfitriones y organizadores tengan control total sin fricción."
+        }
+      }
+    },
+    "EXAMPLES": {
+      "TITLE": "EJEMPLOS REALES",
+      "STATUS": "PRODUCCIÓN",
+      "VIEW_DEMO": "VER DEMO",
+      "QUOTE_SIMILAR": "QUIERO UNO SIMILAR",
+      "TAGS": {
+        "WEDDING": "Boda",
+        "SMART_RSVP": "RSVP Inteligente",
+        "ADMIN_PANEL": "Panel Admin",
+        "CUSTOM_DESIGN": "Diseño a medida",
+        "CHRISTMAS": "Navidad & Fin de Año",
+        "THEMED_EXPERIENCE": "Experiencia Temática",
+        "RSVP": "RSVP",
+        "MOBILE_FIRST": "Mobile-first"
+      },
+      "ITEMS": {
+        "wedding": {
+          "TITLE": "Invitación Digital de Boda",
+          "DESCRIPTION": "Experiencia interactiva personalizada para boda con historia de los novios, cuenta regresiva, itinerario, mapas, confirmación de asistencia (RSVP) con pases por invitado y panel de gestión en tiempo real."
+        },
+        "christmas": {
+          "TITLE": "Invitación de Fiesta Navideña",
+          "DESCRIPTION": "Sitio interactivo con ambientación festiva para celebración navideña y de fin de año, con agenda del evento, confirmación de invitados, detalles clave y administración centralizada."
+        }
+      }
+    },
+    "CTA": {
+      "TEXT": "¿Organizas una boda, fiesta privada o evento corporativo? Hagamos que el software forme parte inolvidable de tu evento.",
+      "BUTTON": "SOLICITAR PROPUESTA"
+    }
   },
   "EXPERIENCE": {
     "ARIA_LABEL": "Experiencia profesional y voluntariado",
@@ -139,6 +204,14 @@
     "ARIA_LABEL": "Proyectos",
     "OPEN": "ABRIR PROYECTO",
     "ITEMS": {
+      "vivento-cards": {
+        "TITLE": "Vivento Cards",
+        "DESCRIPTION": "Vivento Cards es una suite comercial de invitaciones digitales interactivas lanzada a producción y desplegada en vivo bajo subdominios personalizados de vivento.day (como christmas-card-one.vivento.day y wedding-card-one.vivento.day). Funciona con una arquitectura de repositorio único que combina un motor compartido y plantillas visuales con carga perezosa, ofreciendo acceso privado por token, confirmación de asistencia (RSVP) por pasos con selección de menú y acompañantes, cuenta regresiva con exportación .ics, mapas interactivos, álbum de fotos colaborativo moderado y un panel administrativo protegido con configuración en vivo y reportes en PDF y Excel. Construida mediante desarrollo asistido por IA con React 19, Vite, Tailwind CSS, Framer Motion, ExcelJS, jsPDF y Supabase (PostgreSQL 100 % relacional con RLS, RPCs seguras, Auth y Storage), y desplegada en producción en Vercel."
+      },
+      "clausulamesta": {
+        "TITLE": "Clausulamesta",
+        "DESCRIPTION": "Aplicación web en producción para jugadores de LALIGA Fantasy, desplegada en vivo en clausulamesta.club ($0 de infraestructura). Reúne mercado diario de ~650 jugadores con precios y subidas, comparador en paralelo de hasta 5 jugadores con enlaces compartibles, clasificación y rankings de LaLiga, y calculadoras interactivas de cesiones y clausulazos. Construida con desarrollo asistido por IA en arquitectura ligera de archivo único (HTML5, CSS3 y Vanilla JavaScript) como PWA instalable, con automatización de datos y resúmenes diarios en Telegram mediante Node.js y GitHub Actions, alojada en GitHub Pages con dominio propio y SEO técnico completo."
+      },
       "trello-clone": {
         "TITLE": "Clon de Trello",
         "DESCRIPTION": "Clon de la aplicación Trello (en desarrollo). Hasta ahora cuenta con 3 páginas: inicio de sesión, tableros y tablero. Desarrollado con Angular y TailwindCSS; también utiliza Angular CDK para implementar directivas y componentes agnósticos como arrastrar y soltar, overlays, acordeón y más..."
@@ -150,16 +223,45 @@
       "to-do-app": {
         "TITLE": "Aplicación de tareas",
         "DESCRIPTION": "Aplicación de tareas desarrollada con React, siguiendo un patrón de diseño inspirado en FreeCodeCamp. Permite crear, editar y eliminar tareas. También integra un enrutador con React Router DOM y guarda las tareas en LocalStorage. Está alojada en GitHub Pages."
-      },
-      "scroll-test": {
-        "TITLE": "Proyecto de prueba: scroll",
-        "DESCRIPTION": "Tarjeta temporal para comprobar el desplazamiento vertical cuando la lista de proyectos excede el espacio visible."
       }
     }
   },
   "CONTACT": {
     "TITLE": "CONSOLA DE MENSAJE DIRECTO",
     "CHANNEL": "CANAL DIRECTO",
+    "SERVICE_CONTEXT_NOTE": "Dejé un asunto y mensaje listos para ahorrar tiempo — personalízalos si quieres y envíame los detalles de tu evento.",
+    "SERVICE_PRESETS": {
+      "general": {
+        "LABEL": "Propuesta de Software para Eventos",
+        "SUBJECT": "Propuesta: sitio web / software para mi evento",
+        "MESSAGE": "Hola Gustavo, vi tu sección de Servicios y me gustaría conversar sobre cómo construir un sitio o experiencia digital a medida para mi próximo evento. Fecha estimada y tipo de evento:"
+      },
+      "wedding": {
+        "LABEL": "Invitación Digital de Boda",
+        "SUBJECT": "Cotización: Invitación Digital de Boda interactiva",
+        "MESSAGE": "Hola Gustavo, vi tu ejemplo de Invitación Digital de Boda y quiero algo similar para nuestra boda (con RSVP, itinerario y panel de invitados). Me gustaría conocer disponibilidad y propuesta."
+      },
+      "christmas": {
+        "LABEL": "Invitación de Fiesta Navideña / Temática",
+        "SUBJECT": "Cotización: Invitación interactiva para fiesta navideña / evento temático",
+        "MESSAGE": "Hola Gustavo, vi tu demo de Invitación de Fiesta Navideña y me interesa crear una experiencia interactiva similar para nuestra celebración. ¿Podemos coordinar detalles y presupuesto?"
+      },
+      "expectation": {
+        "LABEL": "Sitio e Invitación con Identidad a Medida",
+        "SUBJECT": "Consulta: sitio web / invitación interactiva para mi evento",
+        "MESSAGE": "Hola Gustavo, me interesa impulsar la expectativa de mi evento con una invitación o sitio web con identidad visual a medida, cuenta regresiva y diseño mobile-first. Cuéntame cómo trabajamos."
+      },
+      "logistics": {
+        "LABEL": "RSVP Inteligente y Logística de Evento",
+        "SUBJECT": "Consulta: sistema RSVP y logística digital para evento",
+        "MESSAGE": "Hola Gustavo, necesito simplificar la logística de mi evento con confirmación de asistencia (RSVP), control de pases, mapas e itinerario en un solo lugar. ¿Tienes disponibilidad para conversarlo?"
+      },
+      "experience": {
+        "LABEL": "Software Interactivo y Panel en Tiempo Real",
+        "SUBJECT": "Consulta: experiencia interactiva y panel en tiempo real para evento",
+        "MESSAGE": "Hola Gustavo, quiero que el software sea parte activa de mi evento con dinámicas interactivas y un panel de administración en tiempo real. Me gustaría recibir una propuesta."
+      }
+    },
     "FIELDS": {
       "NAME": "Nombre",
       "EMAIL": "Correo",

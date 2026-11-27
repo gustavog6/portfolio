@@ -109,14 +109,13 @@
   .mobile-nav {
     flex: none;
     display: flex;
-    gap: 4px;
+    gap: 3px;
     background: #181c1f;
   }
 
   .mobile-nav button {
-    flex: 1;
-    min-width: 0;
-    padding: 3px 2px;
+    flex: 1 0 auto;
+    padding: 3px 4px;
     background: #262a2d;
     border: 1px solid #383e44;
     color: #d6c4ac;

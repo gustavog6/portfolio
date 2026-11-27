@@ -9,6 +9,41 @@ export class PortfolioService {
 
   projects: Projects[] = [
     {
+      title: 'Vivento Cards',
+      link: 'https://wedding-card-one.vivento.day/',
+      technologies: [
+        'React 19',
+        'Vite',
+        'Tailwind CSS',
+        'Framer Motion',
+        'Supabase',
+        'PostgreSQL',
+        'ExcelJS',
+        'jsPDF',
+        'Vercel',
+      ],
+      img: '',
+      description:
+        'Commercial interactive digital invitation suite deployed live under custom vivento.day subdomains.',
+    },
+    {
+      title: 'Clausulamesta',
+      link: 'https://clausulamesta.club',
+      technologies: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'PWA',
+        'Node.js',
+        'GitHub Actions',
+        'Telegram',
+        'SEO',
+      ],
+      img: '',
+      description:
+        'Production web application for LALIGA Fantasy managers live at clausulamesta.club.',
+    },
+    {
       title: 'Trello Clone',
       link: 'https://trello-clone-gustavog6.netlify.app/',
       technologies: [

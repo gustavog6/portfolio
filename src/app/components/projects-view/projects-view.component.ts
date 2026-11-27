@@ -19,9 +19,5 @@ export class ProjectsViewComponent {
       link: project.link,
       technologies: project.technologies,
     }),
-  ).concat({
-    id: 'scroll-test',
-    link: 'https://example.com',
-    technologies: ['Prueba de interfaz', 'CSS'],
-  });
+  );
 }

@@ -39,6 +39,27 @@
   font: 700 var(--type-title) "Space Grotesk", sans-serif;
 }
 
+.service-context {
+  margin: 0;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #0b0f11;
+  border: 1px solid #225b60;
+  border-left: 3px solid #34d7ca;
+  color: #e0e3e7;
+  font: var(--type-caption) / 1.4 "JetBrains Mono", monospace;
+}
+
+.service-context i {
+  color: #34d7ca;
+}
+
+.service-context strong {
+  color: #ffd595;
+}
+
 .field-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

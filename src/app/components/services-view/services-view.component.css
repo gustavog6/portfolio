@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  height: 100%;
+  min-height: 0;
+}
+
+.services-log {
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  background: #0b0f11;
+  border: 2px inset #363a3d;
+  font: var(--type-caption) / 1.45 "JetBrains Mono", monospace;
+}
+
+.services-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #383e44;
+}
+
+.services-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-primary);
+}
+
+.services-title h2 {
+  margin: 0;
+  color: var(--color-primary-light);
+  font: 700 var(--type-subtitle) "Space Grotesk", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  background: #181c1f;
+  border: 1px solid #225b60;
+  color: #26d7a0;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #26d7a0;
+  box-shadow: 0 0 6px #26d7a0;
+}

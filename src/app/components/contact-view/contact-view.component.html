@@ -1,11 +1,20 @@
 <section class="contact">
   <form class="message-panel" [action]="formspreeEndpoint" method="POST">
     <header><h2><i class="bx bx-message-square-dots" aria-hidden="true"></i> {{ 'CONTACT.TITLE' | translate }}</h2><span>{{ 'CONTACT.CHANNEL' | translate }}</span></header>
+    @if (serviceIntent(); as intent) {
+      <p class="service-context" role="status">
+        <i class="bx bx-customize" aria-hidden="true"></i>
+        <span>
+          <strong>{{ ('CONTACT.SERVICE_PRESETS.' + intent + '.LABEL') | translate }}:</strong>
+          {{ 'CONTACT.SERVICE_CONTEXT_NOTE' | translate }}
+        </span>
+      </p>
+    }
     <div class="field-grid">
       <label><span><i class="bx bx-user" aria-hidden="true"></i> {{ 'CONTACT.FIELDS.NAME' | translate }}</span><input name="name" type="text" [placeholder]="'CONTACT.PLACEHOLDERS.NAME' | translate" autocomplete="name" required></label>
       <label><span><i class="bx bx-envelope" aria-hidden="true"></i> {{ 'CONTACT.FIELDS.EMAIL' | translate }}</span><input name="email" type="email" [placeholder]="'CONTACT.PLACEHOLDERS.EMAIL' | translate" autocomplete="email" required></label>
-      <label class="subject-field"><span><i class="bx bx-edit" aria-hidden="true"></i> {{ 'CONTACT.FIELDS.SUBJECT' | translate }}</span><input name="_subject" type="text" [placeholder]="'CONTACT.PLACEHOLDERS.SUBJECT' | translate" required></label>
-      <label class="message-field"><span><i class="bx bx-message-detail" aria-hidden="true"></i> {{ 'CONTACT.FIELDS.MESSAGE' | translate }}</span><textarea name="message" rows="3" [placeholder]="'CONTACT.PLACEHOLDERS.MESSAGE' | translate" required></textarea></label>
+      <label class="subject-field"><span><i class="bx bx-edit" aria-hidden="true"></i> {{ 'CONTACT.FIELDS.SUBJECT' | translate }}</span><input name="_subject" type="text" [value]="subjectValue()" (input)="onSubjectInput($event)" [placeholder]="'CONTACT.PLACEHOLDERS.SUBJECT' | translate" required></label>
+      <label class="message-field"><span><i class="bx bx-message-detail" aria-hidden="true"></i> {{ 'CONTACT.FIELDS.MESSAGE' | translate }}</span><textarea name="message" rows="3" [value]="messageValue()" (input)="onMessageInput($event)" [placeholder]="'CONTACT.PLACEHOLDERS.MESSAGE' | translate" required></textarea></label>
     </div>
     <footer>
       <span></span>

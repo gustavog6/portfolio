@@ -14,6 +14,7 @@ export class WorkspaceTabsComponent {
   readonly tabChange = output<WorkTab>();
 
   readonly tabs: { id: WorkTab; label: string; icon: string }[] = [
+    { id: 'servicios', label: 'TABS.SERVICES', icon: 'bx-customize' },
     { id: 'experiencia', label: 'TABS.EXPERIENCE', icon: 'bx-briefcase-alt-2' },
     { id: 'proyectos', label: 'TABS.PROJECTS', icon: 'bx-folder-open' },
     { id: 'contacto', label: 'TABS.CONTACT', icon: 'bx-message-square-dots' },
