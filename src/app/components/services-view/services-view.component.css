@@ -8,13 +8,22 @@
   height: 100%;
   min-height: 0;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 11px;
   background: #0b0f11;
   border: 2px inset #363a3d;
   font: var(--type-caption) / 1.45 "JetBrains Mono", monospace;
+}
+
+.services-card {
+  flex: 1 0 auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #181c1f;
+  border: 1px solid #383e44;
 }
 
 .services-header {
@@ -46,7 +55,7 @@
   align-items: center;
   gap: 6px;
   padding: 3px 8px;
-  background: #181c1f;
+  background: #101417;
   border: 1px solid #225b60;
   color: #26d7a0;
 }

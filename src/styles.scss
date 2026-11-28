@@ -504,8 +504,43 @@ app-root {
 .workstation app-services-view .example-card,
 .workstation app-services-view .cta-banner {
   padding: 10px;
-  background: #181c1f;
+  background: #101417;
   border: 1px solid #383e44;
+}
+
+.workstation app-services-view .pillar-art {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0b0f11;
+  border: 1px solid #225b60;
+}
+
+.workstation app-services-view .pillar-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.workstation app-services-view .example-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0b0f11;
+  border: 1px solid #383e44;
+}
+
+.workstation app-services-view .example-thumb:hover {
+  border-color: #fcb115;
+}
+
+.workstation app-services-view .example-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .workstation app-services-view .hero-card {
@@ -685,8 +720,12 @@ app-root {
 
 @media (max-width: 768px) {
   .workstation app-services-view .services-log {
-    padding: 7px;
-    gap: 8px;
+    padding: 6px;
+  }
+
+  .workstation app-services-view .services-card {
+    padding: 8px;
+    gap: 9px;
   }
 
   .workstation app-services-view .examples-grid {

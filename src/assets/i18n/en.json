@@ -93,30 +93,32 @@
     "TITLE": "SERVICES // EVENT & EXPERIENCE SOFTWARE",
     "STATUS": "AVAILABLE FOR PROJECTS",
     "HERO": {
-      "TITLE": "Software is also part of your event experience.",
-      "DESCRIPTION": "I design and build event websites, interactive digital invitations, and custom experience software to transform how guests live every moment — from the very first spark of anticipation to real-time control on event day. Software can elevate, complement, and become part of your celebration — and I can build it for you.",
+      "TITLE": "Software handles the messy logistics; you enjoy and run your event effortlessly.",
+      "DESCRIPTION": "I design and build event websites, interactive digital invitations, and custom experience software that takes care of the tedious side of planning — endless lists, scattered RSVPs, and repetitive questions. You or your logistics coordinator get everything neatly organized in one place, effortless to use and ready to share.",
       "TAGS": {
         "EVENT_SITES": "Event websites",
         "INTERACTIVE_INVITATIONS": "Interactive invitations",
-        "EXPERIENCE_SOFTWARE": "Experience software",
-        "REALTIME_PANELS": "Real-time panels"
+        "EXPERIENCE_SOFTWARE": "Zero-chaos logistics",
+        "REALTIME_PANELS": "Simple live panels"
       }
     },
     "PILLARS": {
       "TITLE": "HOW SOFTWARE ELEVATES YOUR EVENT",
-      "CTA": "ASK ABOUT THIS",
       "ITEMS": {
         "expectation": {
+          "ALT": "Pixel art illustration of the avatar presenting a glowing digital invitation",
           "TITLE": "BUILDS ANTICIPATION",
-          "DESCRIPTION": "Bespoke invitations and event sites with custom visual identity, interactive storytelling, countdown timers, and mobile-first design that excites from the first click."
+          "DESCRIPTION": "Bespoke invitations and event sites with custom visual identity, countdown timers, and one-tap sharing to excite guests from the very first message."
         },
         "logistics": {
-          "TITLE": "STREAMLINES LOGISTICS",
-          "DESCRIPTION": "Smart RSVP with per-guest passes and plus-ones, dynamic itinerary, map directions, dress code, and gift registry all in one place."
+          "ALT": "Pixel art illustration of the avatar beside an organized RSVP checklist board",
+          "TITLE": "REMOVES THE BUSYWORK",
+          "DESCRIPTION": "Stop chasing replies across chats and spreadsheets: per-guest RSVP passes, plus-ones, itinerary, maps, and key details stay neatly organized and easy to share."
         },
         "experience": {
-          "TITLE": "BECOMES PART OF THE EXPERIENCE",
-          "DESCRIPTION": "Guest wish walls, interactive moments, and a real-time admin panel so hosts and organizers stay in complete control without friction."
+          "ALT": "Pixel art illustration of the avatar using a live event control dashboard",
+          "TITLE": "SIMPLE REAL-TIME CONTROL",
+          "DESCRIPTION": "Collaborative photo galleries, and an intuitive live dashboard so you or your coordinator manage everything smoothly before and during the event."
         }
       }
     },
@@ -137,17 +139,19 @@
       },
       "ITEMS": {
         "wedding": {
+          "ALT": "Preview thumbnail of the interactive wedding digital invitation",
           "TITLE": "Interactive Wedding Invitation",
           "DESCRIPTION": "Custom interactive wedding experience featuring the couple's story, countdown, itinerary, venue maps, per-guest pass RSVP confirmation, and a real-time management panel."
         },
         "christmas": {
+          "ALT": "Preview thumbnail of the holiday party digital invitation",
           "TITLE": "Christmas Party Invitation",
           "DESCRIPTION": "Interactive holiday celebration website with festive theming, event schedule, guest confirmation, key details, and centralized organizer management."
         }
       }
     },
     "CTA": {
-      "TEXT": "Planning a wedding, private celebration, or corporate event? Let's make software an unforgettable part of your experience.",
+      "TEXT": "Planning a wedding, celebration, or corporate event? Let software handle the tedious logistics so everything stays organized, simple to share, and unforgettable.",
       "BUTTON": "REQUEST PROPOSAL"
     }
   },

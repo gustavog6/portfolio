@@ -10,7 +10,7 @@ export class PortfolioService {
   projects: Projects[] = [
     {
       title: 'Vivento Cards',
-      link: 'https://wedding-card-one.vivento.day/',
+      link: 'https://wedding-card-one.vivento.day/?ref=00000000-0000-4000-8000-000000000001',
       technologies: [
         'React 19',
         'Vite',

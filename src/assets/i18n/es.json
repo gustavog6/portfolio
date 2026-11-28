@@ -93,30 +93,32 @@
     "TITLE": "SERVICIOS // SOFTWARE PARA EVENTOS Y EXPERIENCIAS",
     "STATUS": "DISPONIBLE PARA PROYECTOS",
     "HERO": {
-      "TITLE": "El software también es parte de la experiencia de tu evento.",
-      "DESCRIPTION": "Diseño y desarrollo sitios web de eventos, invitaciones digitales interactivas y software a medida para transformar cómo tus invitados viven cada momento: desde la primera expectativa hasta el control en tiempo real el día del evento. El software puede impulsar, complementar y elevar tu celebración — y yo puedo construirlo para ti.",
+      "TITLE": "El software se encarga de lo engorroso; tú disfrutas y controlas tu evento sin fricción.",
+      "DESCRIPTION": "Diseño y desarrollo sitios web de eventos, invitaciones digitales interactivas y software a medida que absorbe la parte pesada de la planificación: listas interminables, confirmaciones dispersas y dudas repetidas. Te entrego —a ti o al encargado de logística— todo ordenado en un solo lugar, súper simple de usar y listo para compartir con tus invitados.",
       "TAGS": {
         "EVENT_SITES": "Sitios de eventos",
         "INTERACTIVE_INVITATIONS": "Invitaciones interactivas",
-        "EXPERIENCE_SOFTWARE": "Software de experiencia",
-        "REALTIME_PANELS": "Paneles en tiempo real"
+        "EXPERIENCE_SOFTWARE": "Logística sin caos",
+        "REALTIME_PANELS": "Paneles simples en vivo"
       }
     },
     "PILLARS": {
-      "TITLE": "CÓMO EL SOFTWARE IMPULSA TU EVENTO",
-      "CTA": "COTIZAR ESTE ENFOQUE",
+      "TITLE": "CÓMO EL SOFTWARE ELEVA TU EVENTO",
       "ITEMS": {
         "expectation": {
+          "ALT": "Ilustración pixel art del avatar presentando una invitación digital luminosa",
           "TITLE": "IMPULSA LA EXPECTATIVA",
-          "DESCRIPTION": "Invitaciones y sitios web con identidad visual a medida, narrativa interactiva, cuenta regresiva y diseño mobile-first que emociona desde el primer clic."
+          "DESCRIPTION": "Invitaciones y sitios web con identidad visual a medida, cuenta regresiva y envío en un clic por WhatsApp para emocionar a tus invitados desde el primer mensaje."
         },
         "logistics": {
-          "TITLE": "COMPLEMENTA LA LOGÍSTICA",
-          "DESCRIPTION": "Confirmación de asistencia (RSVP) con control de pases y acompañantes, itinerario dinámico, ubicación en mapa, código de vestimenta y mesa de regalos en un solo lugar."
+          "ALT": "Ilustración pixel art del avatar con un tablero ordenado de confirmaciones RSVP",
+          "TITLE": "ELIMINA LO ENGORROSO",
+          "DESCRIPTION": "Olvídate de perseguir respuestas en chats u hojas sueltas: RSVP con control de pases y acompañantes, itinerario, mapas y detalles clave siempre ordenados y fáciles de enviar."
         },
         "experience": {
-          "TITLE": "FORMA PARTE DE LA EXPERIENCIA",
-          "DESCRIPTION": "Muros de buenos deseos, dinámicas interactivas y un panel de administración en tiempo real para que anfitriones y organizadores tengan control total sin fricción."
+          "ALT": "Ilustración pixel art del avatar usando un panel de control en tiempo real",
+          "TITLE": "CONTROL SIMPLE EN TIEMPO REAL",
+          "DESCRIPTION": "Galería colaborativa y un panel claro e intuitivo para que tú o tu equipo de logística gestionen todo sin complicaciones antes y durante el evento."
         }
       }
     },
@@ -137,17 +139,19 @@
       },
       "ITEMS": {
         "wedding": {
+          "ALT": "Miniatura de la invitación digital interactiva de boda",
           "TITLE": "Invitación Digital de Boda",
           "DESCRIPTION": "Experiencia interactiva personalizada para boda con historia de los novios, cuenta regresiva, itinerario, mapas, confirmación de asistencia (RSVP) con pases por invitado y panel de gestión en tiempo real."
         },
         "christmas": {
+          "ALT": "Miniatura de la invitación digital de fiesta navideña",
           "TITLE": "Invitación de Fiesta Navideña",
           "DESCRIPTION": "Sitio interactivo con ambientación festiva para celebración navideña y de fin de año, con agenda del evento, confirmación de invitados, detalles clave y administración centralizada."
         }
       }
     },
     "CTA": {
-      "TEXT": "¿Organizas una boda, fiesta privada o evento corporativo? Hagamos que el software forme parte inolvidable de tu evento.",
+      "TEXT": "¿Organizas una boda, celebración o evento corporativo? Deja la parte pesada al software: recibe todo ordenado, fácil de enviar y listo para elevar la experiencia.",
       "BUTTON": "SOLICITAR PROPUESTA"
     }
   },

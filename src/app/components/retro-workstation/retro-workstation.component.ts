@@ -18,11 +18,18 @@ import { ExperienceViewComponent } from '../experience-view/experience-view.comp
 import { ProjectsViewComponent } from '../projects-view/projects-view.component';
 import { ServicesViewComponent } from '../services-view/services-view.component';
 
+const TAB_PATHS: Record<WorkTab, string> = {
+  servicios: '/services',
+  experiencia: '/experience',
+  proyectos: '/projects',
+  contacto: '/contact',
+};
+
 const TAB_TITLES: Record<WorkTab, string> = {
-  servicios: 'Servicios | Gustavo A. González — Software para Eventos',
-  experiencia: 'Experiencia | Gustavo A. González — Full-Stack Engineer',
-  proyectos: 'Proyectos | Gustavo A. González — Full-Stack Engineer',
-  contacto: 'Contacto | Gustavo A. González — Full-Stack Engineer',
+  servicios: 'Services | Gustavo A. González — Event Software',
+  experiencia: 'Experience | Gustavo A. González — Full-Stack Engineer',
+  proyectos: 'Projects | Gustavo A. González — Full-Stack Engineer',
+  contacto: 'Contact | Gustavo A. González — Full-Stack Engineer',
 };
 
 const DEFAULT_TITLE = 'Gustavo A. González | Full-Stack & Software para Eventos';
@@ -120,7 +127,7 @@ export class RetroWorkstationComponent {
   private syncUrl(tab: WorkTab | null): void {
     if (tab) {
       this.title?.setTitle(TAB_TITLES[tab]);
-      this.location?.replaceState(`/${tab}`);
+      this.location?.replaceState(TAB_PATHS[tab]);
     } else {
       this.title?.setTitle(DEFAULT_TITLE);
       this.location?.replaceState('/');
